@@ -22,3 +22,6 @@ Attempt 5: HTTP 401; error.status=null
 429 threshold: not established within the bounded unauthenticated attempts
 
 Function inventory follow-up: fourteen functions now identified and probed; see functions.txt and config.txt.
+
+ORDERING NOTE
+Unauthenticated wrong-code attempts return 401, consistent with auth being checked before code validity. This does not directly establish internal execution order; code validity is distinguishable only with a signed-in request in the observed API contract. No authenticated approval test was performed.
