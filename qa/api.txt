@@ -1,0 +1,34 @@
+PUBLIC API PROBES
+UTC: 2026-10-24T23:31:10.089345+00:00
+No credentials, cookies or authorization header used. Firebase public API key used for Firestore only. No retries on HTTP 500.
+
+Firestore collection: users
+HTTP 403
+First 200 response bytes (UTF-8): {
+  "error": {
+    "code": 403,
+    "message": "Missing or insufficient permissions.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+
+Firestore collection: Videos
+HTTP 403
+First 200 response bytes (UTF-8): {
+  "error": {
+    "code": 403,
+    "message": "Missing or insufficient permissions.",
+    "status": "PERMISSION_DENIED"
+  }
+}
+
+
+Storage list URL: https://firebasestorage.googleapis.com/v0/b/vulu-ebcd6.firebasestorage.app/o
+HTTP 403
+First 200 response bytes: {
+  "error": {
+    "code": 403,
+    "message": "Permission denied."
+  }
+}
