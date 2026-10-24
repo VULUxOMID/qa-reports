@@ -1,0 +1,9 @@
+PASSWORD RESET REDIRECT PROBE
+UTC: 2026-10-24T23:33:40.385496+00:00
+Endpoint: https://us-central1-vulu-ebcd6.cloudfunctions.net/sendPasswordResetEmail
+POST JSON: {"email": "qa-nonexistent@example.invalid", "continueUrl": "https://evil.example/qa", "continue": "https://evil.example/qa", "redirect": "https://evil.example/qa"}
+HTTP: 200
+Response (no account token or message link expected): {"ok":true}
+
+Public reset page sends only {email}; it does not itself send continue/redirect fields. This probe supplied extra fields.
+Email target is a reserved .invalid domain; no controlled mailbox exists and no email delivery or link URL was observed. Acceptance of a request is not proof the server uses redirect/continue fields. Domain in emailed URL: UNVERIFIED. No password reset was completed.
