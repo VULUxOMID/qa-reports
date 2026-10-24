@@ -14,148 +14,152 @@ Sample 1: declared remaining TTL at issuance=599.76 seconds
 {"label":"initial","http":200,"ageStart":23.616,"ageEnd":24.349,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.764,"ageEnd":598.616,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":601.795,"ageEnd":602.633,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.764 seconds and no later than 602.633 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 2: declared remaining TTL at issuance=599.69 seconds
 {"label":"initial","http":200,"ageStart":23.422,"ageEnd":24.407,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.691,"ageEnd":598.52,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":602.116,"ageEnd":603.114,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.691 seconds and no later than 603.114 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 3: declared remaining TTL at issuance=599.743 seconds
 {"label":"initial","http":200,"ageStart":23.462,"ageEnd":24.275,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.746,"ageEnd":598.536,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":602.508,"ageEnd":603.384,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.746 seconds and no later than 603.384 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 4: declared remaining TTL at issuance=599.793 seconds
 {"label":"initial","http":200,"ageStart":23.425,"ageEnd":24.154,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.797,"ageEnd":598.569,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":603.279,"ageEnd":604.104,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.797 seconds and no later than 604.104 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 5: declared remaining TTL at issuance=599.734 seconds
 {"label":"initial","http":200,"ageStart":23.207,"ageEnd":24.062,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.738,"ageEnd":598.648,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":603.568,"ageEnd":604.479,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.738 seconds and no later than 604.479 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 6: declared remaining TTL at issuance=599.806 seconds
 {"label":"initial","http":200,"ageStart":23.063,"ageEnd":23.9,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.811,"ageEnd":598.627,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":603.931,"ageEnd":604.821,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.811 seconds and no later than 604.821 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 7: declared remaining TTL at issuance=599.82 seconds
 {"label":"initial","http":200,"ageStart":23.007,"ageEnd":23.766,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.822,"ageEnd":598.667,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":604.302,"ageEnd":605.115,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.822 seconds and no later than 605.115 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 8: declared remaining TTL at issuance=599.719 seconds
 {"label":"initial","http":200,"ageStart":22.86,"ageEnd":23.671,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.761,"ageEnd":598.548,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":604.646,"ageEnd":605.582,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.761 seconds and no later than 605.582 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 9: declared remaining TTL at issuance=599.814 seconds
 {"label":"initial","http":200,"ageStart":22.825,"ageEnd":23.594,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":597.815,"ageEnd":598.538,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":605.101,"ageEnd":605.878,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 597.815 seconds and no later than 605.878 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 10: declared remaining TTL at issuance=599.815 seconds
 {"label":"initial","http":200,"ageStart":22.844,"ageEnd":23.547,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":598.2,"ageEnd":598.985,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":605.485,"ageEnd":606.267,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 598.2 seconds and no later than 606.267 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 11: declared remaining TTL at issuance=599.826 seconds
 {"label":"initial","http":200,"ageStart":22.729,"ageEnd":23.486,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":598.664,"ageEnd":599.446,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":605.8,"ageEnd":606.604,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 598.664 seconds and no later than 606.604 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 12: declared remaining TTL at issuance=599.827 seconds
 {"label":"initial","http":200,"ageStart":22.591,"ageEnd":23.35,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":598.983,"ageEnd":599.766,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":606.153,"ageEnd":607.037,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 598.983 seconds and no later than 607.037 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 13: declared remaining TTL at issuance=599.828 seconds
 {"label":"initial","http":200,"ageStart":22.534,"ageEnd":23.198,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":598.95,"ageEnd":599.728,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":606.578,"ageEnd":607.373,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 598.95 seconds and no later than 607.373 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 14: declared remaining TTL at issuance=599.793 seconds
 {"label":"initial","http":200,"ageStart":22.432,"ageEnd":23.228,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":599.382,"ageEnd":600.194,"response":{"ok":true,"status":"pending"}}
 {"label":"after-declared-expiry","http":200,"ageStart":606.951,"ageEnd":607.772,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 599.382 seconds and no later than 607.772 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 15: declared remaining TTL at issuance=599.818 seconds
 {"label":"initial","http":200,"ageStart":22.464,"ageEnd":23.146,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":599.799,"ageEnd":600.614,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.367,"ageEnd":608.019,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 22.464 seconds and no later than 600.614 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 16: declared remaining TTL at issuance=599.738 seconds
 {"label":"initial","http":200,"ageStart":22.254,"ageEnd":23.083,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":600.154,"ageEnd":601.057,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.564,"ageEnd":608.405,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 22.254 seconds and no later than 601.057 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 17: declared remaining TTL at issuance=599.813 seconds
 {"label":"initial","http":200,"ageStart":22.092,"ageEnd":22.928,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":600.444,"ageEnd":601.343,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.413,"ageEnd":608.179,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 22.092 seconds and no later than 601.343 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 18: declared remaining TTL at issuance=599.808 seconds
 {"label":"initial","http":200,"ageStart":22.08,"ageEnd":22.762,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":600.96,"ageEnd":601.71,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.331,"ageEnd":608.09,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 22.08 seconds and no later than 601.71 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 19: declared remaining TTL at issuance=599.818 seconds
 {"label":"initial","http":200,"ageStart":22.002,"ageEnd":22.668,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":601.352,"ageEnd":602.084,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.33,"ageEnd":608.016,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 22.002 seconds and no later than 602.084 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 20: declared remaining TTL at issuance=599.815 seconds
 {"label":"initial","http":200,"ageStart":21.915,"ageEnd":22.615,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":601.738,"ageEnd":602.467,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.263,"ageEnd":607.932,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 21.915 seconds and no later than 602.467 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 21: declared remaining TTL at issuance=599.826 seconds
 {"label":"initial","http":200,"ageStart":21.819,"ageEnd":22.545,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":602.032,"ageEnd":602.894,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.136,"ageEnd":607.871,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 21.819 seconds and no later than 602.894 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 22: declared remaining TTL at issuance=599.826 seconds
 {"label":"initial","http":200,"ageStart":21.761,"ageEnd":22.488,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":602.542,"ageEnd":603.266,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.087,"ageEnd":607.759,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 21.761 seconds and no later than 603.266 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 23: declared remaining TTL at issuance=599.796 seconds
 {"label":"initial","http":200,"ageStart":21.73,"ageEnd":22.428,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":602.938,"ageEnd":603.673,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":607.002,"ageEnd":607.743,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 21.73 seconds and no later than 603.673 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 24: declared remaining TTL at issuance=599.806 seconds
 {"label":"initial","http":200,"ageStart":21.644,"ageEnd":22.333,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":603.31,"ageEnd":604.061,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":606.96,"ageEnd":607.657,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 21.644 seconds and no later than 604.061 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
 
 Sample 25: declared remaining TTL at issuance=599.811 seconds
 {"label":"initial","http":200,"ageStart":21.498,"ageEnd":22.259,"response":{"ok":true,"status":"pending"}}
 {"label":"before-declared-expiry","http":200,"ageStart":603.515,"ageEnd":604.395,"response":{"ok":true,"status":"expired"}}
 {"label":"after-declared-expiry","http":200,"ageStart":606.823,"ageEnd":607.564,"response":{"ok":true,"status":"expired"}}
-Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+Conservative observed expiry interval: greater than 21.498 seconds and no later than 604.395 seconds after issuance, including request timing uncertainty. HTTP errors/rate limiting are not treated as expiry.
+
+SAMPLING LIMITATION AND SUMMARY
+All 25 initial polls returned pending and all 25 after-expiry polls returned expired, with HTTP 200. 14 samples were still pending after age 590 seconds. Sequential request timing delayed the remaining nominal pre-expiry checks until after expiry; their bounds therefore start at the initial pending polls and are substantially wider. The before-declared-expiry label describes the scheduled check, not a guarantee it ran before expiry. Per-event ages above are the measured timing evidence.
+First observed expired-response upper bounds ranged from 600.614 to 607.772 seconds. The declared remaining TTL was about 600 seconds; this is consistent with the observed transitions but precise ten-minute lifetime for every sample is not independently established.
