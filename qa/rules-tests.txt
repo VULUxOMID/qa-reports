@@ -1,3 +1,19 @@
+CURRENT FOLLOW-UP STATUS
+UTC: 2026-10-24T23:24:24.093749+00:00
+APP_DIR=/Users/omid/src/vulu
+REPORTS=/Users/omid/qa-reports
+PROJECT_ID=vulu-ebcd6
+
+APP_DIR does not exist. Emulator setup and tests skipped as explicitly instructed when no checkout exists. No rules were fetched from Console because there is no checkout and no authenticated Console session was accessed. No substitute rules or data-access implementation were created.
+
+Fallback live QA-vs-QA2 Firestore REST checks: BLOCKED. /Users/omid/.config/vulu/qa.env does not exist. QA/QA2 credentials were not available. No authenticated live requests or data writes performed.
+
+Requested assertions: unknown collections deny by default; A cannot read/write B users/{uid}/**; plan and role cannot be self-edited; storage users/{uid}/x and users/{other}/x are isolated. Executed assertions: 0. Expected-denial cases executed: 0. No cases counted as passes, expected failures, or successful isolation checks.
+
+The earlier empty .env.qa.example in the report repository is superseded by the external credential-file layout; no credential files were created in either repo.
+
+EARLIER AUDIT EVIDENCE (historical)
+
 FIREBASE EMULATOR AND DATA ACCESS TESTS
 UTC: 2026-10-24T23:20:32.812625+00:00
 
