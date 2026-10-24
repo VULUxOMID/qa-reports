@@ -1,47 +1,79 @@
-ADMIN PUBLIC HEADER VARIANT PROBES
-UTC: 2026-10-24T23:31:10.089345+00:00
-URL: https://vulu.dev/api/admin/session
-GET; no credentials/cookies. Set-Cookie values redacted per standing report requirements; attributes retained. Byte differences below compare response bodies with baseline.
+ADMIN PUBLIC HEADER AND BYTE COMPARISON
+UTC: 2026-10-24T23:33:43.588324+00:00
+Six unauthenticated GETs. Cookie values redacted, attributes preserved. All differing header/body bytes recorded relative to baseline; offsets refer to the redacted header block. Dynamic date/request-ID/trace differences alone do not establish an authorization change.
 
 baseline
-HTTP 401
-ACAO: *
-Set-Cookie: [REDACTED]
-Body bytes: 90; equal to baseline: True
-Response body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
+HTTP/2 401 
+Set-Cookie: (absent)
+access-control-allow-origin: *
+headers: baseline bytes=919, variant bytes=919, equal=True
+body: baseline bytes=90, variant bytes=90, equal=True
+Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
 environment=dev
-HTTP 401
-ACAO: *
-Set-Cookie: [REDACTED]
-Body bytes: 90; equal to baseline: True
-Response body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
+HTTP/2 401 
+Set-Cookie: (absent)
+access-control-allow-origin: *
+headers: baseline bytes=919, variant bytes=919, equal=False
+headers insert: baseline[828:828]=b''; variant[828:832]=b'mN1P'
+headers insert: baseline[829:829]=b''; variant[833:835]=b'op'
+headers delete: baseline[830:838]=b'KB-CaNQU'; variant[836:836]=b''
+headers replace: baseline[839:842]=b'xsR'; variant[837:840]=b'M2i'
+headers replace: baseline[843:850]=b'Qn6XIxQ'; variant[841:850]=b'b2z2h0iww'
+headers replace: baseline[893:897]=b'sq22'; variant[893:897]=b'bgvm'
+body: baseline bytes=90, variant bytes=90, equal=True
+Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
 environment=staging
-HTTP 401
-ACAO: *
-Set-Cookie: [REDACTED]
-Body bytes: 90; equal to baseline: True
-Response body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
+HTTP/2 401 
+Set-Cookie: (absent)
+access-control-allow-origin: *
+headers: baseline bytes=919, variant bytes=919, equal=False
+headers replace: baseline[828:829]=b'r'; variant[828:841]=b'Et0d9lN0QHyQK'
+headers delete: baseline[830:840]=b'KB-CaNQUSx'; variant[842:842]=b''
+headers replace: baseline[842:850]=b'jQn6XIxQ'; variant[844:850]=b'9fVATg'
+body: baseline bytes=90, variant bytes=90, equal=True
+Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
 environment=prod
-HTTP 401
-ACAO: *
-Set-Cookie: [REDACTED]
-Body bytes: 90; equal to baseline: True
-Response body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
+HTTP/2 401 
+Set-Cookie: (absent)
+access-control-allow-origin: *
+headers: baseline bytes=919, variant bytes=919, equal=False
+headers replace: baseline[475:476]=b'2'; variant[475:476]=b'3'
+headers replace: baseline[828:832]=b'r4KB'; variant[828:832]=b'RlUa'
+headers replace: baseline[833:834]=b'C'; variant[833:841]=b'QvnRt6Qi'
+headers replace: baseline[835:837]=b'NQ'; variant[842:845]=b'_Pw'
+headers replace: baseline[838:846]=b'SxsRjQn6'; variant[846:848]=b'FZ'
+headers replace: baseline[847:850]=b'IxQ'; variant[849:850]=b'w'
+headers replace: baseline[893:897]=b'sq22'; variant[893:897]=b'bgvm'
+body: baseline bytes=90, variant bytes=90, equal=True
+Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
 environment=garbage
-HTTP 401
-ACAO: *
-Set-Cookie: [REDACTED]
-Body bytes: 90; equal to baseline: True
-Response body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
+HTTP/2 401 
+Set-Cookie: (absent)
+access-control-allow-origin: *
+headers: baseline bytes=919, variant bytes=919, equal=False
+headers replace: baseline[475:476]=b'2'; variant[475:476]=b'3'
+headers replace: baseline[828:831]=b'r4K'; variant[828:831]=b'bGu'
+headers insert: baseline[832:832]=b''; variant[832:848]=b'bphhTFei_AkXCYBc'
+headers replace: baseline[833:850]=b'CaNQUSxsRjQn6XIxQ'; variant[849:850]=b'A'
+headers replace: baseline[893:897]=b'sq22'; variant[893:897]=b'bgvm'
+body: baseline bytes=90, variant bytes=90, equal=True
+Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
 forged-user-id
-HTTP 401
-ACAO: *
-Set-Cookie: [REDACTED]
-Body bytes: 90; equal to baseline: True
-Response body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
+HTTP/2 401 
+Set-Cookie: (absent)
+access-control-allow-origin: *
+headers: baseline bytes=919, variant bytes=919, equal=False
+headers replace: baseline[475:476]=b'2'; variant[475:476]=b'3'
+headers replace: baseline[828:830]=b'r4'; variant[828:833]=b'Hb298'
+headers replace: baseline[831:841]=b'B-CaNQUSxs'; variant[834:836]=b'K8'
+headers replace: baseline[842:846]=b'jQn6'; variant[837:839]=b'1q'
+headers insert: baseline[847:847]=b''; variant[840:845]=b'zXDT9'
+headers replace: baseline[848:850]=b'xQ'; variant[846:850]=b'3ezw'
+body: baseline bytes=90, variant bytes=90, equal=True
+Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
