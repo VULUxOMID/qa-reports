@@ -1,0 +1,88 @@
+PUBLIC ROUTE DRIFT
+UTC: 2026-10-24T23:31:46.823382+00:00
+Unauthenticated HTML/link/static redirect inspection. Not an authenticated SPA router inventory. Query values/fragments omitted; no account or browser state used.
+
+app.vulutv.com
+Root SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+Routes advertised or served by observed public HTML:
+/
+/about.html
+/account
+/blog.html
+/converter
+/converter.html
+/dmca
+/dmca.html
+/features.html
+/how-it-works.html
+/link
+/pricing.html
+/privacy
+/privacy.html
+/reset-password
+/save
+/signin
+/signup
+/terms
+/terms.html
+/tv-signin
+/verify-email
+
+vulu-app.web.app
+Root SHA256: fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+Routes advertised or served by observed public HTML:
+/
+/ + encodeURIComponent(here || 
+
+Unified diff (advertised/served route lists):
+--- app.vulutv.com
++++ vulu-app.web.app
+@@ -1,22 +1,2 @@
+ /
+-/about.html
+-/account
+-/blog.html
+-/converter
+-/converter.html
+-/dmca
+-/dmca.html
+-/features.html
+-/how-it-works.html
+-/link
+-/pricing.html
+-/privacy
+-/privacy.html
+-/reset-password
+-/save
+-/signin
+-/signup
+-/terms
+-/terms.html
+-/tv-signin
+-/verify-email
++/ + encodeURIComponent(here || 
+
+GET same discovered paths on both hosts (no redirects followed):
+/	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498	vulu-app.web.app: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+/ + encodeURIComponent(here || 	app.vulutv.com: HTTP 0, Content-Type=None, SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855	vulu-app.web.app: HTTP 0, Content-Type=None, SHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+/about.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=c3fc1f30f523e6eb759e2151be50463af4f5b3ff02fed159a86c478205935c41	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/account	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=11cda27ca23dbd02d5bbf03a4eff961cd0b312c22a5215b961cb53a1d52d6fbd	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/blog.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=3e383a7d04921e07d83c5e2554437cfbdc712531a47c830a436e1e02e1181122	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/converter	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=637205822f53335d19babed8a28dbfdffe2e4d04c638610ca236adda1524a6f6	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/converter.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=a1e7631c462231ae5b1991c200214a96005d31f340c86e4122a27d399cf8c96a	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/dmca	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=fcbe265a0a0888bf8c7f9e11aeb4417f6b9176c6dc5364cc00ce916a562d264b	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/dmca.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=36fc1900e5415f1385108cfdf2f8140abcafc79a2d87b30c721a6ef349540404	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/features.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=a91d73d0457309cffa2ccafc96aac1c7660022a15a14255160d3761b7ac5cf30	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/how-it-works.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=9b8e60e7e52af79ae38cd40f0fb902a416be630433d68e6fc5b608dee038fd05	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/link	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=5e8036e036abe12f7336effaef66f2b2a90f7105913456ae8c641d1dace444f4	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/pricing.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=0c0733a20079b729fffd269ca3b14ace012672d213378d8e5a4106b3f85b2eaa	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/privacy	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=e04db46a205e7107ce38d35ae30f275a8cae21b155a03ccd1d23632b6ebee123	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/privacy.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=f6d43f77e83fa0f03322f4640425707709adeeb98010dc9233f4c1cbce292658	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/reset-password	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=e127181a441db760f68acd8d0d688e385400e828d0d4f3d4af1aed14ee893294	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/save	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/signin	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=3171bee1dbd99be4e96f5034742e893a137e6bcc6834096606701103968cb5c8	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/signup	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=2d0259ebc6aa3d2327e74240103a84495e51416f1a1d768bab054b9c1f16b108	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/terms	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=5bc42d0abd1472d40f39c5337ec4a6881d4610cdfffad32f9601fbb6b5d89272	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/terms.html	app.vulutv.com: HTTP 301, Content-Type=text/plain; charset=utf-8, SHA256=30c8b2add82ff4f02d1c31f37af99ce93bbccffa150fb12d9ffcd16d5a45717f	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/tv-signin	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=e8b890d412b68483025b2bed44ad4581828186512913140ac85184543f9d2fb7	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+/verify-email	app.vulutv.com: HTTP 200, Content-Type=text/html; charset=utf-8, SHA256=e13bb0653dd59ea234ad7ed1fb73c98e1a32014156ee4dfdb9d9f8ab559a06f8	vulu-app.web.app: HTTP 404, Content-Type=text/html; charset=utf-8, SHA256=a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
