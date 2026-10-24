@@ -17,3 +17,10 @@ sendPasswordResetEmail	PUT	HTTP 405	First 100 bytes: b'{"ok":false,"error":"meth
 sendPasswordResetEmail	DELETE	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
 sendPasswordResetEmail	trailing slash POST	HTTP 200	First 100 bytes: b'{"ok":true}'
 sendPasswordResetEmail	simple text/plain POST	HTTP 200	First 100 bytes: b'{"ok":true}'
+
+SIMPLE CROSS-ORIGIN FOLLOW-UP
+Origin: https://evil.example; Content-Type: text/plain; POST {}. No credentials.
+pollDeviceLink: HTTP 400; ACAO https://vulutv.com; ACAC absent; first 100 bytes: {"ok":false,"error":"missing_device_id"}
+requestDeviceLinkCode: HTTP 200; ACAO https://vulutv.com; ACAC absent; success body contains deviceId/code/claimSecret (redacted).
+sendPasswordResetEmail: HTTP 200; ACAO https://vulutv.com; ACAC absent; first 100 bytes: {"ok":true}
+The server processed simple POSTs; ACAO differs from the supplied hostile Origin, so a conforming browser would not expose these responses to that origin. This does not demonstrate acceptance of privileged authenticated actions.
