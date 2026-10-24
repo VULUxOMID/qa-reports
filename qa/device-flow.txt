@@ -21,4 +21,4 @@ Attempt 4: HTTP 401; error.status=null
 Attempt 5: HTTP 401; error.status=null
 429 threshold: not established within the bounded unauthenticated attempts
 
-Function inventory: 11 names observed; user requested 13. The two additional names have not been supplied and were not guessed.
+Function inventory follow-up: fourteen functions now identified and probed; see functions.txt and config.txt.
