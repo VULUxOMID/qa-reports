@@ -1,0 +1,944 @@
+PUBLIC SCRIPT AND CONFIG INVENTORY
+UTC: 2026-10-24T23:18:52.806262+00:00
+Public HTML and script bundles only. Collection names and flags are heuristic candidates, not proof of server configuration.
+
+URL: https://vulutv.com/
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6547-OSL
+X-Cache: HIT
+X-Cache-Hits: 2
+X-Timer: S1792883936.852070,VS0,VE0
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+script src: https://vulutv.com/pwa-register.js
+script src: https://vulutv.com/js/main.js
+
+URL: https://vulutv.com/signin
+Status: 200
+Connection: close
+Content-Length: 25694
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "e319e6a1102d5bc51cc382680dccf4cc90505b83794f0c62b7cf256c89bbfaaa"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.868339,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 3171bee1dbd99be4e96f5034742e893a137e6bcc6834096606701103968cb5c8
+script src: https://vulutv.com/pwa-register.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+
+URL: https://vulutv.com/signup
+Status: 200
+Connection: close
+Content-Length: 25132
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "5b12fff454f8b1a2ed7b97123df5cd2a3cc66487648c18f4aee0956f681ba6ba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6538-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.868616,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 2d0259ebc6aa3d2327e74240103a84495e51416f1a1d768bab054b9c1f16b108
+script src: https://vulutv.com/pwa-register.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+script src: https://www.google.com/recaptcha/api.js?render=6LdcHS4tAAAAAErIbEMrtDfwNm5mL6hOyzCyMcqP
+
+URL: https://vulutv.com/tv-signin
+Status: 200
+Connection: close
+Content-Length: 9486
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "b26be2928f271161a5189c7f9a10c5cf82d78b15494aa6883b51c274c8d60b00"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6541-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.868419,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e8b890d412b68483025b2bed44ad4581828186512913140ac85184543f9d2fb7
+
+URL: https://vulutv.com/converter
+Status: 200
+Connection: close
+Content-Length: 21496
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "96de7d047b9c38a5666d2595c58333cbce9552834bf2dc272d97d648a183bc2c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6525-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.868431,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 637205822f53335d19babed8a28dbfdffe2e4d04c638610ca236adda1524a6f6
+script src: https://vulutv.com/pwa-register.js
+
+URL: https://app.vulutv.com/
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6548-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.868276,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+script src: https://app.vulutv.com/pwa-register.js
+script src: https://app.vulutv.com/js/main.js
+
+URL: https://app.vulutv.com/signin
+Status: 200
+Connection: close
+Content-Length: 25694
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "e319e6a1102d5bc51cc382680dccf4cc90505b83794f0c62b7cf256c89bbfaaa"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6526-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.945769,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 3171bee1dbd99be4e96f5034742e893a137e6bcc6834096606701103968cb5c8
+script src: https://app.vulutv.com/pwa-register.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+
+URL: https://app.vulutv.com/signup
+Status: 200
+Connection: close
+Content-Length: 25132
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "5b12fff454f8b1a2ed7b97123df5cd2a3cc66487648c18f4aee0956f681ba6ba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6538-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.967521,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 2d0259ebc6aa3d2327e74240103a84495e51416f1a1d768bab054b9c1f16b108
+script src: https://app.vulutv.com/pwa-register.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+script src: https://www.google.com/recaptcha/api.js?render=6LdcHS4tAAAAAErIbEMrtDfwNm5mL6hOyzCyMcqP
+
+URL: https://app.vulutv.com/tv-signin
+Status: 200
+Connection: close
+Content-Length: 9486
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "b26be2928f271161a5189c7f9a10c5cf82d78b15494aa6883b51c274c8d60b00"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6545-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.967585,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e8b890d412b68483025b2bed44ad4581828186512913140ac85184543f9d2fb7
+
+URL: https://app.vulutv.com/converter
+Status: 200
+Connection: close
+Content-Length: 21496
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "96de7d047b9c38a5666d2595c58333cbce9552834bf2dc272d97d648a183bc2c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.970684,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 637205822f53335d19babed8a28dbfdffe2e4d04c638610ca236adda1524a6f6
+script src: https://app.vulutv.com/pwa-register.js
+
+URL: https://vulu-app.web.app/
+Status: 200
+Connection: close
+Content-Length: 257060
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "bae8d9a840bcbeab5e16503472ae4cfc61de10187474e6f04d763e24739b08b6"
+Last-Modified: Wed, 16 Sep 2026 16:59:47 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:55 GMT
+X-Served-By: cache-osl6524-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883936.970508,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+script src: https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js
+script src: https://vulu-app.web.app/qrcode.min.js
+
+URL: https://vulu-app.web.app/signin
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6549-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883936.970770,VS0,VE290
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/signup
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6522-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883936.039094,VS0,VE227
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/tv-signin
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6534-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883936.062747,VS0,VE197
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/converter
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6529-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883936.062778,VS0,VE226
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu.dev/
+Status: 302
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+location: /admin/
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: au-cshsBT8ahTlHi9fVATg
+Transfer-Encoding: chunked
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+URL: https://vulu.dev/signin
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: lsRPUCnoQMinhTWIwUFZXw
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/signup
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: R9WKKWn_Tpm3Ji8K-_9nXA
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/tv-signin
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: UxNRmIS_TBqQ0FRbljLL4A
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/converter
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: 0ha1VSB9RxqIsZpGpHNmDw
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://app.vulutv.com/js/main.js
+Status: 200
+Connection: close
+Content-Length: 5436
+Cache-Control: public, max-age=31536000, immutable
+Content-Type: text/javascript; charset=utf-8
+Etag: "57aa1c8f1e8aea1c7a3da35b9145c5b37a464ea93d8f6e0aa1c8fff6ad5ffa11"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6534-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883937.671250,VS0,VE105
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 1e221b89df713abc27b6b0d78e7c37c7c7ffdf1bb769dca16032834ae6d95599
+
+URL: https://app.vulutv.com/pwa-register.js
+Status: 200
+Connection: close
+Content-Length: 706
+Cache-Control: public, max-age=31536000, immutable
+Content-Type: text/javascript; charset=utf-8
+Etag: "ad39e36ac59bb735497943ae2b48d40b4bb2e8f78193f123b8c3ce2379e8bcba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6530-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883937.671174,VS0,VE112
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: c2b7477b15b4c65b275300eddf705be5b251d9a433eb55e356470ef2446270b7
+
+URL: https://vulu-app.web.app/qrcode.min.js
+Status: 200
+Connection: close
+Content-Length: 20768
+Cache-Control: public, max-age=31536000, immutable
+Content-Type: text/javascript; charset=utf-8
+Etag: "c2fd8b921037c6a3379b79ced48198701732288a2f9ae9ef85b9dcbf9d500702"
+Last-Modified: Wed, 16 Sep 2026 16:59:47 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883937.671245,VS0,VE135
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: bb2365e4902f4f84852cf4025e6f6a60325a682aeafa43fb63b7fc8f098d1ef2
+
+URL: https://vulutv.com/js/main.js
+Status: 200
+Connection: close
+Content-Length: 5436
+Cache-Control: public, max-age=31536000, immutable
+Content-Type: text/javascript; charset=utf-8
+Etag: "57aa1c8f1e8aea1c7a3da35b9145c5b37a464ea93d8f6e0aa1c8fff6ad5ffa11"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883937.673716,VS0,VE100
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 1e221b89df713abc27b6b0d78e7c37c7c7ffdf1bb769dca16032834ae6d95599
+
+URL: https://vulutv.com/pwa-register.js
+Status: 200
+Connection: close
+Content-Length: 706
+Cache-Control: public, max-age=31536000, immutable
+Content-Type: text/javascript; charset=utf-8
+Etag: "ad39e36ac59bb735497943ae2b48d40b4bb2e8f78193f123b8c3ce2379e8bcba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+X-Served-By: cache-osl6545-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883937.671187,VS0,VE98
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: c2b7477b15b4c65b275300eddf705be5b251d9a433eb55e356470ef2446270b7
+
+URL: https://www.google.com/recaptcha/api.js?render=6LdcHS4tAAAAAErIbEMrtDfwNm5mL6hOyzCyMcqP
+Status: 200
+Content-Type: text/javascript; charset=utf-8
+Expires: Sat, 24 Oct 2026 23:18:56 GMT
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+Cache-Control: private, max-age=300
+Cross-Origin-Resource-Policy: cross-origin
+Cross-Origin-Opener-Policy-Report-Only: same-origin; report-to="coop_38fac9d5b82543fc4729580d18ff2d3d"
+Report-To: {"group":"coop_38fac9d5b82543fc4729580d18ff2d3d","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/38fac9d5b82543fc4729580d18ff2d3d"}]}
+Server: ESF
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Accept-Ranges: none
+Vary: Accept-Encoding
+Connection: close
+Transfer-Encoding: chunked
+
+Body SHA256: 5467f6811f6beb7cb8dcfc9cf9f50c28d2cdcc53f6cc9934e3cd09be021d069f
+
+URL: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+Status: 200
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Type: text/javascript; charset=UTF-8
+Access-Control-Allow-Origin: *
+Content-Security-Policy-Report-Only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/firebase-js
+Cross-Origin-Resource-Policy: cross-origin
+Cross-Origin-Opener-Policy: same-origin-allow-popups; report-to="firebase-js"
+Report-To: {"group":"firebase-js","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/firebase-js"}]}
+Content-Length: 31444
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+Expires: Sun, 24 Oct 2027 23:18:56 GMT
+Cache-Control: public, max-age=31536000
+Last-Modified: Mon, 27 May 2024 17:13:52 GMT
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 0
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Connection: close
+
+Body SHA256: 24a1fd90a9424647636669f59013201ba385eff82a58f88c76a7d400d4d71139
+
+URL: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+Status: 200
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Type: text/javascript; charset=UTF-8
+Access-Control-Allow-Origin: *
+Content-Security-Policy-Report-Only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/firebase-js
+Cross-Origin-Resource-Policy: cross-origin
+Cross-Origin-Opener-Policy: same-origin-allow-popups; report-to="firebase-js"
+Report-To: {"group":"firebase-js","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/firebase-js"}]}
+Content-Length: 139582
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+Expires: Sun, 24 Oct 2027 23:18:56 GMT
+Cache-Control: public, max-age=31536000
+Last-Modified: Mon, 27 May 2024 17:13:15 GMT
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 0
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Connection: close
+
+Body SHA256: 277f6ef70525168247921e7a51fe995ecc66f9c3cf56c97f0d2bc262f74b5906
+
+URL: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+Status: 200
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Type: text/javascript; charset=UTF-8
+Access-Control-Allow-Origin: *
+Content-Security-Policy-Report-Only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/firebase-js
+Cross-Origin-Resource-Policy: cross-origin
+Cross-Origin-Opener-Policy: same-origin-allow-popups; report-to="firebase-js"
+Report-To: {"group":"firebase-js","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/firebase-js"}]}
+Content-Length: 341174
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+Expires: Sun, 24 Oct 2027 23:18:56 GMT
+Cache-Control: public, max-age=31536000
+Last-Modified: Mon, 27 May 2024 17:13:46 GMT
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 0
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Connection: close
+
+Body SHA256: 25133ac64bef210c19384ed72eafdec440c27c02a6b48e9d2b6b48bf7b00ad04
+
+URL: https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js
+Status: 200
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Type: text/javascript; charset=UTF-8
+Access-Control-Allow-Origin: *
+Content-Security-Policy-Report-Only: require-trusted-types-for 'script'; report-uri https://csp.withgoogle.com/csp/firebase-js
+Cross-Origin-Resource-Policy: cross-origin
+Cross-Origin-Opener-Policy: same-origin-allow-popups; report-to="firebase-js"
+Report-To: {"group":"firebase-js","max_age":2592000,"endpoints":[{"url":"https://csp.withgoogle.com/csp/report-to/firebase-js"}]}
+Content-Length: 40329
+Date: Sat, 24 Oct 2026 23:18:56 GMT
+Expires: Sun, 24 Oct 2027 23:18:56 GMT
+Cache-Control: public, max-age=31536000
+Last-Modified: Mon, 27 May 2024 17:13:53 GMT
+X-Content-Type-Options: nosniff
+Server: sffe
+X-XSS-Protection: 0
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Connection: close
+
+Body SHA256: ee9154a1c0f4c15cea65693f3e2beb2ee03dbee58a58f8f77282ccd47d54fd56
+
+SOURCE: https://vulutv.com/signin inline script 4
+api paths:
+
+https URLs:
+https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken
+https://vulu-app.web.app
+collection candidates:
+users
+firebase/config:
+1:822260998484:web:06186fad3b7ebb0095a8c1
+822260998484
+AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k
+vulu-ebcd6
+vulu-ebcd6.firebaseapp.com
+vulu-ebcd6.firebasestorage.app
+feature flags:
+
+SOURCE: https://vulutv.com/signup inline script 5
+api paths:
+
+https URLs:
+https://us-central1-vulu-ebcd6.cloudfunctions.net/claimInviteCode
+https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken
+https://us-central1-vulu-ebcd6.cloudfunctions.net/sendVerificationEmail
+https://vulu-app.web.app
+collection candidates:
+users
+firebase/config:
+1:822260998484:web:06186fad3b7ebb0095a8c1
+822260998484
+AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k
+vulu-ebcd6
+vulu-ebcd6.firebaseapp.com
+vulu-ebcd6.firebasestorage.app
+feature flags:
+
+SOURCE: https://vulutv.com/tv-signin inline script 0
+api paths:
+
+https URLs:
+https://api.qrserver.com/v1/create-qr-code/?size=300x300&ecc=M&data=
+https://quickchart.io/qr?text=
+https://us-central1-vulu-ebcd6.cloudfunctions.net/pollDeviceLink
+https://us-central1-vulu-ebcd6.cloudfunctions.net/requestDeviceLinkCode
+https://vulu-app.web.app
+https://vulutv.com/link?code=
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://app.vulutv.com/signin inline script 4
+api paths:
+
+https URLs:
+https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken
+https://vulu-app.web.app
+collection candidates:
+users
+firebase/config:
+1:822260998484:web:06186fad3b7ebb0095a8c1
+822260998484
+AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k
+vulu-ebcd6
+vulu-ebcd6.firebaseapp.com
+vulu-ebcd6.firebasestorage.app
+feature flags:
+
+SOURCE: https://app.vulutv.com/signup inline script 5
+api paths:
+
+https URLs:
+https://us-central1-vulu-ebcd6.cloudfunctions.net/claimInviteCode
+https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken
+https://us-central1-vulu-ebcd6.cloudfunctions.net/sendVerificationEmail
+https://vulu-app.web.app
+collection candidates:
+users
+firebase/config:
+1:822260998484:web:06186fad3b7ebb0095a8c1
+822260998484
+AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k
+vulu-ebcd6
+vulu-ebcd6.firebaseapp.com
+vulu-ebcd6.firebasestorage.app
+feature flags:
+
+SOURCE: https://app.vulutv.com/tv-signin inline script 0
+api paths:
+
+https URLs:
+https://api.qrserver.com/v1/create-qr-code/?size=300x300&ecc=M&data=
+https://quickchart.io/qr?text=
+https://us-central1-vulu-ebcd6.cloudfunctions.net/pollDeviceLink
+https://us-central1-vulu-ebcd6.cloudfunctions.net/requestDeviceLinkCode
+https://vulu-app.web.app
+https://vulutv.com/link?code=
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://vulu-app.web.app/ inline script 0
+api paths:
+
+https URLs:
+https://vulutv.com/tv-lite?reason=tizen_
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://vulu-app.web.app/ inline script 6
+api paths:
+
+https URLs:
+https://api.qrserver.com/v1/create-qr-code/?size=300x300&ecc=
+https://chromewebstore.google.com/detail/save-to-vulu/lbmjfjembhgphcijkndmoifcbialbkpp
+https://quickchart.io/qr?text=
+https://us-central1-vulu-ebcd6.cloudfunctions.net/captureVideo
+https://us-central1-vulu-ebcd6.cloudfunctions.net/deleteVideoForTV
+https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken
+https://us-central1-vulu-ebcd6.cloudfunctions.net/getUploadUrl
+https://us-central1-vulu-ebcd6.cloudfunctions.net/pollDeviceLink
+https://us-central1-vulu-ebcd6.cloudfunctions.net/requestDeviceLinkCode
+https://us-central1-vulu-ebcd6.cloudfunctions.net/sendVerificationEmail
+https://us-central1-vulu-ebcd6.cloudfunctions.net/uploadVideo
+https://vulutv.com
+https://vulutv.com/link
+collection candidates:
+Videos
+users
+firebase/config:
+1:822260998484:web:06186fad3b7ebb0095a8c1
+822260998484
+AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k
+vulu-ebcd6
+vulu-ebcd6.firebaseapp.com
+vulu-ebcd6.firebasestorage.app
+feature flags:
+enabled
+fullscreenEnabled
+SOURCE: https://app.vulutv.com/js/main.js
+api paths:
+/api/waitlist
+https URLs:
+
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://app.vulutv.com/pwa-register.js
+api paths:
+
+https URLs:
+
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://vulu-app.web.app/qrcode.min.js
+api paths:
+
+https URLs:
+https://www.jsdelivr.com/using-sri-with-dynamic-files
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://vulutv.com/js/main.js
+api paths:
+/api/waitlist
+https URLs:
+
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://vulutv.com/pwa-register.js
+api paths:
+
+https URLs:
+
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://www.google.com/recaptcha/api.js?render=6LdcHS4tAAAAAErIbEMrtDfwNm5mL6hOyzCyMcqP
+api paths:
+
+https URLs:
+https://www.google.com/recaptcha/api2/
+https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__en.js
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+SOURCE: https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js
+api paths:
+
+https URLs:
+
+collection candidates:
+
+firebase/config:
+
+feature flags:
+_automaticDataCollectionEnabled
+automaticDataCollectionEnabled
+SOURCE: https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js
+api paths:
+
+https URLs:
+https://${e.authDomain}/${Cn}
+https://${e.config.authDomain}/${Tn}
+https://apis.google.com/js/api.js
+https://www.google.com/recaptcha/api.js
+https://www.google.com/recaptcha/enterprise.js?render=
+collection candidates:
+
+firebase/config:
+
+feature flags:
+enabled
+isProactiveRefreshEnabled
+isProviderEnabled
+SOURCE: https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js
+api paths:
+
+https URLs:
+https://securetoken.google.com/${n}
+https://stackoverflow.com/q/56496296/110915
+collection candidates:
+
+firebase/config:
+
+feature flags:
+enabled
+networkEnabled
+setNetworkEnabled
+SOURCE: https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js
+api paths:
+
+https URLs:
+https://${t}
+https://firebase.google.com/docs/web/environments-js-sdk#polyfills
+https://firebase.google.com/pricing/.
+https://securetoken.google.com/${r}
+collection candidates:
+
+firebase/config:
+
+feature flags:
+
+
+PROJECT_ID candidates: vulu-ebcd6

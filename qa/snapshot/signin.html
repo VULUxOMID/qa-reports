@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in · Vulu</title>
+  <link rel="stylesheet" href="auth.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="apple-touch-icon" href="/assets/vulu-mark.svg">
+  <script src="/pwa-register.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-topbar">
+      <a class="auth-brand" href="/">Vulu</a>
+      <a class="auth-topbar-link" href="/signup">Start free</a>
+    </div>
+
+    <div class="auth-card">
+      <h1 class="auth-title">Welcome back.</h1>
+
+      <div id="errorBox" class="auth-error" role="alert"></div>
+
+      <!-- action="javascript:void(0)" prevents the form from doing a
+           native GET submission on Samsung Tizen browsers where
+           preventDefault() doesn't stick. Without this, pressing
+           Enter on Sign In was triggering a real page reload to
+           /signin?email=…&password=… — fields cleared AND password
+           leaked into the URL. Combined with submitBtn type="button"
+           (below), there are now no native form-submit paths at all;
+           authentication only fires via the explicit JS handlers. -->
+      <form id="signinForm" autocomplete="on" action="javascript:void(0)" method="post">
+        <div class="auth-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="auth-field">
+          <label for="password">Password</label>
+          <div style="position:relative;">
+            <input id="password" name="password" type="password" required autocomplete="current-password" style="padding-right:96px;">
+            <button id="showPasswordBtn" type="button" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);color:#fff;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;">Show</button>
+          </div>
+        </div>
+        <button id="submitBtn" type="button" class="auth-btn auth-btn-primary">Sign in</button>
+      </form>
+
+      <!-- Manual "Sign in with QR" affordance. Always visible. Routes
+           to vulu-app.web.app/?tv=1 which forces the QR-code signin
+           overlay regardless of UA detection. The auto-redirect above
+           catches most TV browsers; this is the safety net for any TV
+           whose UA we don't recognize, plus a useful "use my phone"
+           option for desktop users with their phone already signed in. -->
+      <a id="qrSigninBtn" href="/tv-signin" class="auth-btn" style="margin-top:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:#cdd9ef;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+          <path d="M14 14h3v3h-3z M19 14h2v2h-2z M14 19h2v2h-2z M17 17h4v4h-4z" stroke="none" fill="currentColor"/>
+        </svg>
+        <span>Sign in with phone (scan QR)</span>
+      </a>
+
+      <!-- Google sign-in: button wired client-side but OAuth provider
+           not yet enabled in Firebase / Google Cloud Console (task #24).
+           Hidden via display:none until properly configured to avoid
+           the false-promise UX of a dead button. Re-enable by removing
+           "display:none" from the inline style. (2026-06-27) -->
+      <button id="googleBtn" type="button" class="auth-btn auth-btn-google" style="margin-top:10px;display:none;">
+        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92c1.71-1.57 2.68-3.88 2.68-6.61z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.83.87-3.04.87-2.34 0-4.32-1.58-5.03-3.7H.96v2.32A9 9 0 0 0 9 18z"/>
+          <path fill="#FBBC05" d="M3.97 10.73a5.4 5.4 0 0 1 0-3.46V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.32z"/>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.46 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.95l3.01 2.32C4.68 5.16 6.66 3.58 9 3.58z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+
+      <div class="auth-footer">
+        <a href="/reset-password">Forgot password?</a>
+        <span style="margin: 0 8px; color:#444;">·</span>
+        Don’t have an account? <a href="/signup">Start free →</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k",
+  authDomain: "vulu-ebcd6.firebaseapp.com",
+  projectId: "vulu-ebcd6",
+  storageBucket: "vulu-ebcd6.firebasestorage.app",
+  messagingSenderId: "822260998484",
+  appId: "1:822260998484:web:06186fad3b7ebb0095a8c1"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+const GET_AUTH_HANDOFF_TOKEN_ENDPOINT = "https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken";
+const APP_ORIGIN = "https://vulu-app.web.app";
+
+// TV-browser auto-redirect to QR sign-in (2026-06-27, revised 2026-06-28).
+// Samsung Tizen (and other TV browsers) struggle with email/password
+// sign-in because the on-screen keyboard + remote-Enter interactions
+// are inconsistent across vendor WebViews. Skip the form entirely and
+// route TV browsers to /tv-signin (QR/device-code). User scans QR on
+// phone, approves, TV signs in automatically. No typing, no Enter-
+// button gymnastics.
+//
+// SAFETY GATE (2026-06-28): a stale `?tv=1` left in URL history on an
+// iPhone was bouncing real phone users into /tv-signin during /save →
+// /signin flows, surprising them with a QR code mid-task. Now we
+// REQUIRE a positive TV UA match AND explicitly exclude known phone/
+// desktop UAs before honoring `?tv=1`. Phones and laptops are never
+// TVs even if a `?tv=1` flag is somehow present.
+(function redirectTvToQrSignin() {
+  try {
+    var ua = navigator.userAgent || "";
+    // Hard exclude: iOS phones/tablets, Android phones, and any
+    // desktop (Mac/Windows/Linux) UA. None of these is ever a TV.
+    var isPhoneOrDesktop =
+      /iPhone|iPad|iPod/i.test(ua) ||
+      /Android.*Mobile/i.test(ua) ||
+      /Macintosh|Mac OS X/i.test(ua) ||
+      /Windows NT/i.test(ua) ||
+      /X11;|Linux x86_64/i.test(ua);
+    if (isPhoneOrDesktop) return;
+    // Positive TV match. Mirrors app's isTV regex.
+    var isTV = /Web0S|webOS|Smart-?TV|LG NetCast|Tizen|BRAVIA|GoogleTV|AndroidTV|HbbTV|VIERA|NETTV/i.test(ua)
+            || !!window.PalmServiceBridge
+            || !!window.webOS
+            || /[?&]tv=1\b/.test(location.search);
+    if (!isTV) return;
+    // Loop guard: if the QR page or app sent the user back here for
+    // any reason, don't ping-pong. URL flag suppresses the redirect.
+    if (/[?&]from=(app|tv)\b/.test(location.search)) return;
+    // Redirect to the dedicated TV signin page on vulutv.com (same
+    // origin -- no cross-domain caching issues). That page handles
+    // the QR + device-code flow without depending on the app's
+    // complex TV overlay machinery.
+    window.location.replace("/tv-signin");
+  } catch (e) { /* non-fatal; fall through to normal signin */ }
+})();
+
+const errorBox = document.getElementById("errorBox");
+const form = document.getElementById("signinForm");
+const submitBtn = document.getElementById("submitBtn");
+const googleBtn = document.getElementById("googleBtn");
+
+function showError(msg) {
+  errorBox.textContent = msg;
+  errorBox.classList.add("is-shown");
+}
+function clearError() {
+  errorBox.classList.remove("is-shown");
+}
+
+// If the app surface bounced us back with ?authError=, surface a
+// specific message instead of dropping the user into a blank signin
+// form (which is what makes the redirect-loop symptom feel mysterious).
+(function showAuthErrorBanner() {
+  const params = new URLSearchParams(window.location.search);
+  const err = params.get("authError");
+  if (!err) return;
+  if (err === "handoff_failed") {
+    showError("Sign-in expired, please try again.");
+  } else {
+    showError("Couldn’t complete sign-in. Try again.");
+  }
+})();
+
+async function ensureUserDoc(user, opts = {}) {
+  const ref = db.collection("users").doc(user.uid);
+  const snap = await ref.get();
+  if (snap.exists) return;
+  const now = firebase.firestore.FieldValue.serverTimestamp();
+  await ref.set({
+    email: user.email || "",
+    createdAt: now,
+    tier: "launch",
+    monthlyUploadCount: 0,
+    monthlyUploadResetDate: now,
+    lifetimeUploadCount: 0,
+    emailVerified: !!user.emailVerified,
+    provider: opts.provider || (user.providerData[0] && user.providerData[0].providerId) || "password"
+  });
+}
+
+// If the caller landed on /signin?redirect=/some/path we honor that
+// after the auth state is set up, instead of handing off to the app.
+// Used by the device-link flow (/link?code=...) and any future
+// "sign in then come back" surfaces. Only relative paths are accepted
+// to prevent an open-redirect attack via the query string.
+function getSafeRedirectPath() {
+  try {
+    const raw = new URLSearchParams(window.location.search).get("redirect");
+    if (!raw) return null;
+    // Only allow same-origin relative paths starting with "/".
+    if (!raw.startsWith("/") || raw.startsWith("//")) return null;
+    return raw;
+  } catch (e) { return null; }
+}
+
+async function handoffToApp(user) {
+  // Refresh the client-side Firebase user object before reading
+  // emailVerified — the local copy is cached from the last sign-in and
+  // doesn't auto-update when the user clicks the verification link in
+  // another tab. Without this, freshly-verified users would still see
+  // emailVerified === false and bounce to /verify-email indefinitely.
+  try { await user.reload(); } catch (e) { /* non-fatal */ }
+
+  // ?redirect= takes precedence over the default app-handoff. This is
+  // how /link, /verify-email, and any future "come back here after
+  // signin" flows get routed back to where the user started. Email-
+  // verified gate still applies -- unverified users go to /verify-email
+  // first, but we keep the original redirect in the URL so the chain
+  // resumes after verification.
+  const redirectPath = getSafeRedirectPath();
+  if (!user.emailVerified) {
+    if (redirectPath) {
+      window.location.replace("/verify-email?redirect=" + encodeURIComponent(redirectPath));
+    } else {
+      window.location.replace("/verify-email");
+    }
+    return;
+  }
+  if (redirectPath) {
+    window.location.replace(redirectPath);
+    return;
+  }
+  try {
+    // Pass `true` to force a token refresh from Firebase's servers. The
+    // default-cached token still carries email_verified: false until the
+    // refresh cycle picks up the verified state. Without this,
+    // getAuthHandoffToken's verifyIdToken check on the server would see
+    // the stale claim and 403, looping us back to /verify-email.
+    const idToken = await user.getIdToken(true);
+    const res = await fetch(GET_AUTH_HANDOFF_TOKEN_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + idToken
+      },
+      body: JSON.stringify({})
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok && data.token) {
+      window.location.replace(APP_ORIGIN + "/?authToken=" + encodeURIComponent(data.token));
+      return;
+    }
+    // Two failure shapes we know how to route deterministically. Anything
+    // else falls through to the legacy app-redirect fallback, but we keep
+    // an authError= param so the user gets a real message instead of a
+    // silent loop.
+    if (res.status === 403 && data && data.error === "email_not_verified") {
+      window.location.replace("/verify-email");
+      return;
+    }
+    console.warn("getAuthHandoffToken returned", res.status, data);
+    window.location.replace("/signin?authError=handoff_failed");
+  } catch (e) {
+    console.warn("Custom-token handoff failed", e);
+    window.location.replace("/signin?authError=handoff_failed");
+  }
+}
+
+// Extracted from the form's submit listener so it can ALSO be called
+// directly from the Sign In button's click handler, the password
+// field's blur fallback, and the keydown handlers — without relying
+// on synthetic form-submit event dispatch (which Samsung Tizen
+// WebViews don't always honor). Single source of truth for sign-in.
+let signInInFlight = false;
+async function doSignIn() {
+  if (signInInFlight) return;
+  signInInFlight = true;
+  clearError();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  if (!email || !password) {
+    showError("Email and password required.");
+    signInInFlight = false;
+    return;
+  }
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Signing in...";
+  try {
+    const cred = await auth.signInWithEmailAndPassword(email, password);
+    await ensureUserDoc(cred.user);
+    if (cred.user.emailVerified) {
+      await handoffToApp(cred.user);
+    } else {
+      window.location.replace("/verify-email");
+    }
+  } catch (err) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Sign in";
+    const code = err && err.code;
+    if (code === "auth/user-not-found" || code === "auth/wrong-password" || code === "auth/invalid-credential" || code === "auth/invalid-login-credentials") {
+      showError("Email or password doesn’t match. Try again, or reset your password.");
+    } else if (code === "auth/invalid-email") {
+      showError("That doesn’t look like a valid email.");
+    } else if (code === "auth/too-many-requests") {
+      showError("Too many attempts. Wait a minute and try again, or reset your password.");
+    } else {
+      showError(err.message || "Sign-in failed.");
+    }
+  } finally {
+    signInInFlight = false;
+  }
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  await doSignIn();
+});
+
+googleBtn.addEventListener("click", async () => {
+  clearError();
+  googleBtn.disabled = true;
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    await auth.signInWithRedirect(provider);
+  } catch (err) {
+    googleBtn.disabled = false;
+    showError(err.message || "Google sign-in failed.");
+  }
+});
+
+// Page-load: handle Google redirect callback if any, then attach the
+// already-signed-in listener. See signup.html for the same pattern +
+// rationale (race-free ordering between users/{uid} doc creation and
+// the cross-origin handoff).
+;(async () => {
+  try {
+    const result = await auth.getRedirectResult();
+    if (result && result.user) {
+      await ensureUserDoc(result.user, { provider: "google.com" });
+    }
+  } catch (err) {
+    const code = err && err.code;
+    if (code === "auth/account-exists-with-different-credential") {
+      showError("That email already has a Vulu account with a password. Sign in with email + password instead.");
+    } else if (code && code !== "auth/no-auth-event") {
+      showError(err.message || "Google sign-in failed.");
+    }
+    console.warn("getRedirectResult error:", err);
+  }
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      if (user.emailVerified) {
+        handoffToApp(user);
+      } else {
+        window.location.replace("/verify-email");
+      }
+    }
+  });
+})();
+
+// -- TV REMOTE SPATIAL NAVIGATION + SHOW PASSWORD + ENTER-TO-NEXT --
+// For LG webOS and other TV browsers using D-pad input.
+;(function () {
+  // Direct listeners on the password input (in addition to the
+  // document-level keydown handler below). Samsung Tizen 5/6 on-screen
+  // keyboards close on "Done" WITHOUT dispatching a keydown to the
+  // document — they just close the IME and fire a blur. So we listen
+  // for keydown directly on the input AND we listen for blur as a
+  // last-resort submit trigger when both fields have values.
+  // (2026-06-27)
+  var pwInputDirect = document.getElementById("password");
+  var emailInputDirect = document.getElementById("email");
+  function trySubmitForm() {
+    var emailVal = emailInputDirect && (emailInputDirect.value || "").trim();
+    var pwVal = pwInputDirect && (pwInputDirect.value || "");
+    if (!emailVal || pwVal.length < 1) return;
+    // Call doSignIn() directly -- skip the form-submit-event dance
+    // entirely. Older Samsung Tizen WebViews don't trigger submit
+    // event listeners reliably when dispatched programmatically.
+    // Direct function call works on every browser. doSignIn is
+    // defined further up in this script.
+    if (typeof doSignIn === "function") {
+      doSignIn();
+    }
+  }
+  if (pwInputDirect) {
+    pwInputDirect.addEventListener("keydown", function (e) {
+      var k = e.key, kc = e.keyCode;
+      if (k === "Enter" || kc === 13) {
+        e.preventDefault();
+        trySubmitForm();
+      }
+    });
+    // Last-resort: when the password field loses focus (Samsung Done
+    // key closes the keyboard, which fires blur), submit if the form
+    // is filled. The 100ms delay lets any other focus-shift events
+    // settle before we kick the submit.
+    pwInputDirect.addEventListener("blur", function () {
+      setTimeout(trySubmitForm, 100);
+    });
+  }
+  if (emailInputDirect) {
+    emailInputDirect.addEventListener("keydown", function (e) {
+      var k = e.key, kc = e.keyCode;
+      if (k === "Enter" || kc === 13) {
+        e.preventDefault();
+        var p = document.getElementById("password");
+        if (p) p.focus();
+      }
+    });
+  }
+
+  // Direct keydown listeners on the action buttons. The document-level
+  // handler (further down) should catch these too, but Samsung Tizen
+  // browsers sometimes don't propagate keydown events from focused
+  // buttons to the document — putting a listener directly on the
+  // element guarantees we catch the remote's Enter key regardless of
+  // event-propagation quirks. Also accepts Samsung's alternate Enter
+  // keycodes (32=Space, 65376=IME confirm).
+  var sbtn = document.getElementById("submitBtn");
+  if (sbtn) {
+    sbtn.addEventListener("keydown", function (e) {
+      var k = e.key, kc = e.keyCode;
+      if (k === "Enter" || k === " " || k === "Spacebar" ||
+          kc === 13 || kc === 32 || kc === 65376) {
+        e.preventDefault();
+        e.stopPropagation();
+        trySubmitForm();
+      }
+    });
+    // Also handle plain click (mouse, touch, magic-remote pointer).
+    // With the button now being type="button" (not "submit"), the
+    // default click->submit chain is broken, so we wire it explicitly.
+    sbtn.addEventListener("click", function () {
+      trySubmitForm();
+    });
+  }
+  var showBtnDirect = document.getElementById("showPasswordBtn");
+  if (showBtnDirect) {
+    showBtnDirect.addEventListener("keydown", function (e) {
+      var k = e.key, kc = e.keyCode;
+      if (k === "Enter" || k === " " || k === "Spacebar" ||
+          kc === 13 || kc === 32 || kc === 65376) {
+        e.preventDefault();
+        e.stopPropagation();
+        showBtnDirect.click();
+      }
+    });
+  }
+
+  // Show/hide password toggle. Uses setAttribute (more reliable than
+  // direct .type assignment on older TV WebViews — Samsung Tizen 5/6
+  // sometimes silently ignores the property assignment but honors the
+  // attribute mutation). After the swap, re-focus the input so the
+  // on-screen keyboard stays attached.
+  var showBtn = document.getElementById("showPasswordBtn");
+  var pwInput = document.getElementById("password");
+  if (showBtn && pwInput) {
+    showBtn.addEventListener("click", function () {
+      var current = pwInput.getAttribute("type") || pwInput.type || "password";
+      var next = (current === "password") ? "text" : "password";
+      try { pwInput.setAttribute("type", next); } catch (e) {}
+      // Belt-and-suspenders: also assign the property in case the
+      // browser honors that path and not the attribute.
+      try { pwInput.type = next; } catch (e) {}
+      showBtn.textContent = (next === "text") ? "Hide" : "Show";
+      // Keep focus on the input so the user can continue typing/editing.
+      try { pwInput.focus(); } catch (e) {}
+    });
+  }
+
+  // Inject strong TV-friendly focus styles for buttons + inputs.
+  // The default :focus outline is barely visible at 10ft. These styles
+  // make the focused element unmistakable.
+  var s = document.createElement("style");
+  s.textContent =
+    "input:focus,input:focus-visible{outline:4px solid #4982ff!important;outline-offset:2px;}" +
+    ".auth-btn:focus,.auth-btn:focus-visible,#showPasswordBtn:focus,#showPasswordBtn:focus-visible{outline:4px solid #fff!important;outline-offset:3px;transform:scale(1.03);}" +
+    ".auth-footer a:focus,.auth-footer a:focus-visible{outline:4px solid #4982ff!important;outline-offset:3px;}";
+  document.head.appendChild(s);
+
+  function focusables() {
+    return [
+      document.getElementById("email"),
+      document.getElementById("password"),
+      document.getElementById("showPasswordBtn"),
+      document.getElementById("submitBtn"),
+      document.getElementById("googleBtn"),
+      document.querySelector(".auth-footer a[href='/reset-password']"),
+      document.querySelector(".auth-footer a[href='/signup']")
+    ].filter(function (el) {
+      // Skip disabled OR display:none / visibility:hidden elements --
+      // D-pad shouldn't land on an invisible focusable (e.g., the
+      // hidden Google sign-in button while OAuth is unwired).
+      if (!el || el.disabled) return false;
+      if (el.offsetParent === null) return false;
+      return true;
+    });
+  }
+
+  // Force initial focus on email so D-pad has somewhere to start.
+  setTimeout(function () {
+    var email = document.getElementById("email");
+    if (email && document.activeElement !== email) email.focus();
+  }, 200);
+
+  document.addEventListener("keydown", function (e) {
+    var k = e.key;
+    var kc = e.keyCode;
+    var els = focusables();
+    if (!els.length) return;
+    var idx = els.indexOf(document.activeElement);
+    if (idx < 0) idx = 0;
+    var current = els[idx];
+    var isInput = current && current.tagName === "INPUT";
+
+    // Enter inside an input field:
+    //   - On EMAIL: jump to the password field (typical "next field"
+    //     behavior). Don't submit yet -- user hasn't typed password.
+    //   - On PASSWORD: submit the form. Samsung Tizen's on-screen
+    //     keyboard has a "Done" button (green check) that dispatches
+    //     Enter -- that IS the user's submit intent. Previously we
+    //     swallowed it and moved focus to the Sign In button, so the
+    //     user pressed Done, focus jumped silently, and nothing
+    //     happened. Fixed 2026-06-27.
+    if ((k === "Enter" || kc === 13) && isInput) {
+      e.preventDefault();
+      if (current && current.id === "password") {
+        // Trigger the form's submit handler. Use form.requestSubmit()
+        // for the native flow (also validates required fields); fall
+        // back to direct submitBtn.click() on older browsers that lack
+        // requestSubmit (Tizen WebView <2022 doesn't have it).
+        var form = document.getElementById("signinForm") ||
+                   document.querySelector("form");
+        if (form && typeof form.requestSubmit === "function") {
+          form.requestSubmit();
+        } else {
+          var btn = document.getElementById("submitBtn");
+          if (btn && typeof btn.click === "function") btn.click();
+        }
+        return;
+      }
+      // Default (email field): move to next focusable.
+      var nextIdx = (idx + 1) % els.length;
+      els[nextIdx].focus();
+      return;
+    }
+
+    // Enter on a focused button/link -> explicitly fire its click
+    // handler. LG webOS synthesizes the click natively, but Samsung
+    // Tizen's browser doesn't reliably, so pressing OK on the "Sign
+    // in" button looked like nothing happened. Explicit .click() works
+    // on every TV browser. (2026-06-27)
+    if ((k === "Enter" || kc === 13) && current && current.tagName !== "INPUT") {
+      e.preventDefault();
+      if (typeof current.click === "function") current.click();
+      return;
+    }
+
+    var isArrow = (k === "ArrowUp" || k === "ArrowDown" || k === "ArrowLeft" || k === "ArrowRight" ||
+                   kc === 38 || kc === 40 || kc === 37 || kc === 39);
+    if (!isArrow) return;
+
+    var nextIdx = idx;
+    if (k === "ArrowDown" || kc === 40) {
+      nextIdx = (idx + 1) % els.length;
+    } else if (k === "ArrowUp" || kc === 38) {
+      nextIdx = (idx - 1 + els.length) % els.length;
+    }
+    // Left/Right while in an input field: let the keyboard / cursor handle
+    // them (text navigation). On non-input elements, treat them like up/down.
+    else if (!isInput && (k === "ArrowRight" || kc === 39)) {
+      nextIdx = (idx + 1) % els.length;
+    } else if (!isInput && (k === "ArrowLeft" || kc === 37)) {
+      nextIdx = (idx - 1 + els.length) % els.length;
+    }
+
+    if (nextIdx !== idx) {
+      e.preventDefault();
+      els[nextIdx].focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

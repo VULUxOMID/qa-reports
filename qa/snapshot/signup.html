@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start free · Vulu</title>
+  <link rel="stylesheet" href="auth.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="apple-touch-icon" href="/assets/vulu-mark.svg">
+  <script src="/pwa-register.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <!-- reCAPTCHA v3 (signup bot defense). Loads grecaptcha.execute(siteKey,
+       {action: "signup"}) which returns a score-based token that the
+       server validates via Google siteverify. Bots score low and get no
+       verification email; humans pass through transparently. -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdcHS4tAAAAAErIbEMrtDfwNm5mL6hOyzCyMcqP"></script>
+</head>
+<body>
+  <div class="auth-shell">
+    <div class="auth-topbar">
+      <a class="auth-brand" href="/">Vulu</a>
+      <a class="auth-topbar-link" href="/signin">Sign in</a>
+    </div>
+
+    <div class="auth-card">
+      <!-- Founding-member welcome (revealed by JS when ?invite= is in URL).
+           Replaces the generic trial pitch with a personalized "you're
+           invited" message + a quick "what you're getting" explainer so
+           friends-and-family testers know what they signed up for. -->
+      <div id="inviteHero" style="display:none;">
+        <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#c5d8fb;background:rgba(45,108,223,0.18);border:1px solid rgba(45,108,223,0.4);padding:6px 12px;border-radius:999px;margin-bottom:14px;">Founding member · Invite-only beta</div>
+        <h1 class="auth-title">You're in.</h1>
+        <p class="auth-subtitle">Permanent free access during the beta. The smart-TV apps (LG, Samsung, Apple TV, Roku) are in review — you'll get those automatically once approved. Best on phone or desktop today.</p>
+
+        <div style="margin-top:22px;display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="flex:0 0 28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#4982ff,#b34dff);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">1</div>
+            <div>
+              <div style="color:#fff;font-weight:600;font-size:14px;">Sign up below</div>
+              <div style="color:#9c9cb1;font-size:13px;line-height:1.5;">Email + password takes 10 seconds. No card. Verify your email and you're done.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="flex:0 0 28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#4982ff,#b34dff);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">2</div>
+            <div>
+              <div style="color:#fff;font-weight:600;font-size:14px;">Save videos from anywhere</div>
+              <div style="color:#9c9cb1;font-size:13px;line-height:1.5;">Install the <a href="https://chromewebstore.google.com/detail/save-to-vulu/lbmjfjembhgphcijkndmoifcbialbkpp" target="_blank" rel="noopener" style="color:#6e9efb;">Chrome extension</a> for one-click capture from Instagram / TikTok / YouTube / X / Facebook, or paste a link at <a href="/save" style="color:#6e9efb;">vulutv.com/save</a>.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="flex:0 0 28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#4982ff,#b34dff);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">3</div>
+            <div>
+              <div style="color:#fff;font-weight:600;font-size:14px;">Watch on any screen</div>
+              <div style="color:#9c9cb1;font-size:13px;line-height:1.5;">Your library lives at <a href="https://vulu-app.web.app" target="_blank" rel="noopener" style="color:#6e9efb;">vulu-app.web.app</a> — works on phone, tablet, laptop, and TV browsers. Native TV apps are launching post-beta.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin:22px 0 6px;padding:14px;background:rgba(255,184,68,0.10);border:1px solid rgba(255,184,68,0.30);border-radius:10px;font-size:13px;color:#ffe2b3;line-height:1.5;">
+          <strong style="color:#ffe2b3;">Hey, this is a beta.</strong> Stuff will break. When it does, click Help inside the app to email me — I read every one and fixes ship fast.
+        </div>
+      </div>
+
+      <!-- Default (no-invite) hero. Hidden when ?invite= is set. -->
+      <div id="defaultHero">
+        <h1 class="auth-title">Start free.</h1>
+        <p class="auth-subtitle">Nine videos. Two weeks. No card. Watch hands-free on your TV — most folks know by day five.</p>
+      </div>
+
+      <div id="errorBox" class="auth-error" role="alert"></div>
+
+      <form id="signupForm" autocomplete="on">
+        <div class="auth-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+        </div>
+        <div class="auth-field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password">
+          <div id="pwStrength" style="font-size:11px;color:#888;margin-top:6px;min-height:14px;"></div>
+        </div>
+        <button id="submitBtn" type="submit" class="auth-btn auth-btn-primary">Create my account</button>
+      </form>
+
+      <!-- Google sign-in hidden until task #24 (OAuth provider setup in
+           Firebase + Google Cloud Console) is done. Button is wired but
+           the provider isn't enabled, so clicks did nothing — worse UX
+           than just hiding. Re-enable by removing display:none. (2026-06-27) -->
+      <button id="googleBtn" type="button" class="auth-btn auth-btn-google" style="margin-top:10px;display:none;">
+        <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92c1.71-1.57 2.68-3.88 2.68-6.61z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.83.87-3.04.87-2.34 0-4.32-1.58-5.03-3.7H.96v2.32A9 9 0 0 0 9 18z"/>
+          <path fill="#FBBC05" d="M3.97 10.73a5.4 5.4 0 0 1 0-3.46V4.95H.96a9 9 0 0 0 0 8.1l3.01-2.32z"/>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.46 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.95l3.01 2.32C4.68 5.16 6.66 3.58 9 3.58z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+
+      <p style="font-size:12px;color:#888;text-align:center;margin-top:14px;line-height:1.5;">No credit card. No trial countdown. No surprises.</p>
+
+      <div class="auth-footer">
+        Already have an account? <a href="/signin">Sign in →</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyAUvStkSR2O48jcxI7h4dxolTQalKIOU-k",
+  authDomain: "vulu-ebcd6.firebaseapp.com",
+  projectId: "vulu-ebcd6",
+  storageBucket: "vulu-ebcd6.firebasestorage.app",
+  messagingSenderId: "822260998484",
+  appId: "1:822260998484:web:06186fad3b7ebb0095a8c1"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+
+const SEND_VERIFICATION_ENDPOINT = "https://us-central1-vulu-ebcd6.cloudfunctions.net/sendVerificationEmail";
+const GET_AUTH_HANDOFF_TOKEN_ENDPOINT = "https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken";
+const CLAIM_INVITE_ENDPOINT = "https://us-central1-vulu-ebcd6.cloudfunctions.net/claimInviteCode";
+const APP_ORIGIN = "https://vulu-app.web.app";
+
+// Capture ?invite= from URL on page load and stash it for the post-
+// signup claim. Survives the verify-email round-trip via localStorage
+// because some testers will click the verify link in a different tab
+// and we want them to still get founding-member status. Normalize the
+// code to canonical "VULU-XXXX-YYYY" so we match what claimInviteCode
+// expects server-side.
+function captureInviteCodeFromUrl() {
+  try {
+    const raw = new URLSearchParams(window.location.search).get("invite");
+    if (!raw) return null;
+    const stripped = String(raw).toUpperCase().replace(/[^A-Z0-9]/g, "");
+    const body = stripped.startsWith("VULU") ? stripped.slice(4) : stripped;
+    if (body.length !== 8) return null;
+    const canonical = "VULU-" + body.slice(0, 4) + "-" + body.slice(4);
+    localStorage.setItem("vulu.pendingInvite", canonical);
+    return canonical;
+  } catch (e) { return null; }
+}
+function getPendingInviteCode() {
+  try { return localStorage.getItem("vulu.pendingInvite"); } catch (e) { return null; }
+}
+function clearPendingInviteCode() {
+  try { localStorage.removeItem("vulu.pendingInvite"); } catch (e) {}
+}
+// Run immediately on script load so the invite is captured even if the
+// user takes a long time to fill out the form.
+const _capturedInvite = captureInviteCodeFromUrl();
+
+// Swap the page hero when arriving via an invite link. Invite arrivals
+// see the "You're in / founding member" welcome with a 3-step explainer
+// of what Vulu does and what to expect post-signup. Regular arrivals
+// (no invite in URL) keep the generic "Start free" trial pitch. Run on
+// DOM-ready since the hero elements are below this script in the body.
+(function swapHeroOnInvite() {
+  const apply = () => {
+    if (!_capturedInvite) return;
+    const inv = document.getElementById("inviteHero");
+    const def = document.getElementById("defaultHero");
+    if (inv) inv.style.display = "block";
+    if (def) def.style.display = "none";
+    // Tweak the submit button copy too so the "Create my account" CTA
+    // matches the invite framing.
+    const btn = document.getElementById("submitBtn");
+    if (btn) btn.textContent = "Claim my founding-member spot";
+    // Update <title> to give the right tab label.
+    try { document.title = "You're invited · Vulu"; } catch (e) {}
+  };
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", apply);
+  } else {
+    apply();
+  }
+})();
+
+async function claimInviteCodeNow(user) {
+  const code = getPendingInviteCode();
+  if (!code) return null;
+  try {
+    const idToken = await user.getIdToken();
+    const res = await fetch(CLAIM_INVITE_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + idToken,
+      },
+      body: JSON.stringify({ code }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok) {
+      clearPendingInviteCode();
+      return data.memberNumber || null;
+    }
+    // Code rejected -- log + clear so we don't keep retrying. The user
+    // still gets a normal trial signup; they can re-enter on /account
+    // if the code was a typo.
+    console.warn("claimInviteCode rejected", res.status, data);
+    if (res.status === 404 || res.status === 410 || res.status === 409) {
+      clearPendingInviteCode();
+    }
+    return null;
+  } catch (e) {
+    console.warn("claimInviteCode failed", e);
+    return null;
+  }
+}
+
+const errorBox = document.getElementById("errorBox");
+const form = document.getElementById("signupForm");
+const submitBtn = document.getElementById("submitBtn");
+const googleBtn = document.getElementById("googleBtn");
+const pwInput = document.getElementById("password");
+const pwStrength = document.getElementById("pwStrength");
+
+function showError(msg) {
+  errorBox.textContent = msg;
+  errorBox.classList.add("is-shown");
+}
+function clearError() {
+  errorBox.classList.remove("is-shown");
+  errorBox.textContent = "";
+}
+
+// Lightweight strength indicator. Not a security control — just UX
+// signal so users land an 8+ char password instead of bouncing off
+// Firebase's "weak password" error.
+pwInput.addEventListener("input", () => {
+  const v = pwInput.value;
+  if (!v) { pwStrength.textContent = ""; return; }
+  let score = 0;
+  if (v.length >= 8) score++;
+  if (v.length >= 12) score++;
+  if (/[a-z]/.test(v) && /[A-Z]/.test(v)) score++;
+  if (/\d/.test(v)) score++;
+  if (/[^A-Za-z0-9]/.test(v)) score++;
+  const labels = ["Too short", "Weak", "OK", "Strong", "Very strong", "Excellent"];
+  const colors = ["#ff9b9b", "#ff9b9b", "#ffd58a", "#b6ecc4", "#b6ecc4", "#b6ecc4"];
+  pwStrength.style.color = colors[Math.min(score, 5)];
+  pwStrength.textContent = labels[Math.min(score, 5)];
+});
+
+async function ensureUserDoc(user, opts = {}) {
+  // Schema (2026-06-11 trial model):
+  //   tier             — "trial" on signup, becomes paid tier name after Stripe sub
+  //   trialStartedAt   — null until first successful save (server sets it then)
+  //   trialVideosUsed  — increments on every successful capture (cap = 9)
+  //   lifetimeUploadCount — keeps incrementing forever, all tiers
+  // Trial expires at min(9 saves, 14 days from trialStartedAt, 21 days from createdAt).
+  // Hard paywall: when expired, captureVideo returns TRIAL_EXPIRED and the
+  // library locks until subscription. Failed saves never count.
+  //
+  // Idempotency: this used to early-return on snap.exists, which created a
+  // race window during signup — onAuthStateChanged could fire and redirect
+  // to /verify-email before the form handler's ensureUserDoc completed.
+  // /verify-email's `set({emailVerified:true}, {merge:true})` would then
+  // create the doc with ONLY that field, missing tier + createdAt + the
+  // trial counters. account.html saw `snap.exists` → skipped bootstrap →
+  // rendered the default "launch" tier with blank Member Since.
+  // Fix: always merge-write the full schema. Existing fields are preserved;
+  // missing ones get filled in. Safe to call from any signup-flow path.
+  const ref = db.collection("users").doc(user.uid);
+  const snap = await ref.get();
+  const existing = snap.exists ? (snap.data() || {}) : {};
+  const now = firebase.firestore.FieldValue.serverTimestamp();
+  const payload = {
+    email: existing.email || user.email || "",
+    createdAt: existing.createdAt || now,
+    tier: existing.tier || "trial",
+    trialStartedAt: ("trialStartedAt" in existing) ? existing.trialStartedAt : null,
+    trialVideosUsed: typeof existing.trialVideosUsed === "number" ? existing.trialVideosUsed : 0,
+    lifetimeUploadCount: typeof existing.lifetimeUploadCount === "number" ? existing.lifetimeUploadCount : 0,
+    emailVerified: !!user.emailVerified || !!existing.emailVerified,
+    provider: existing.provider || opts.provider || (user.providerData[0] && user.providerData[0].providerId) || "password"
+  };
+  if (!existing.intentTier) {
+    const intent = pickIntentTier();
+    if (intent) payload.intentTier = intent;
+  }
+  await ref.set(payload, { merge: true });
+}
+
+function pickIntentTier() {
+  // ?plan=<value> is honored from pricing-page CTAs so the user's
+  // tier intent survives to the post-Stripe-live upgrade prompt.
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get("plan");
+  if (plan && /^[a-z0-9_-]{1,32}$/i.test(plan)) return plan.toLowerCase();
+  return null;
+}
+
+// reCAPTCHA v3 site key (public; safe to ship in client code). The
+// matching SECRET is held server-side in Firebase Secret Manager as
+// RECAPTCHA_SECRET and consumed only by sendVerificationEmail.
+const RECAPTCHA_SITE_KEY = "6LdcHS4tAAAAAErIbEMrtDfwNm5mL6hOyzCyMcqP";
+
+// Returns a fresh reCAPTCHA v3 token bound to the "signup" action, or
+// null if reCAPTCHA failed to load (network blocked, ad-blocker, etc.).
+// Returning null lets the server decide policy -- currently it rejects
+// missing tokens, so users with reCAPTCHA blocked must allowlist
+// google.com/recaptcha in their blocker to sign up. Same posture as
+// every other reCAPTCHA-gated form on the web.
+// Poll for the reCAPTCHA <script> to finish loading before giving up.
+// Fixes the "click resend twice" / "first signup fails silently" bug
+// where the previous version bailed if grecaptcha was still loading
+// at click time, sending a null token that the server then 403'd.
+function waitForGrecaptcha(maxWaitMs) {
+  return new Promise((resolve) => {
+    const start = Date.now();
+    const tick = () => {
+      if (typeof grecaptcha !== "undefined" && grecaptcha && grecaptcha.ready) {
+        resolve(true);
+        return;
+      }
+      if (Date.now() - start > maxWaitMs) {
+        resolve(false);
+        return;
+      }
+      setTimeout(tick, 80);
+    };
+    tick();
+  });
+}
+
+async function getRecaptchaToken() {
+  const t0 = Date.now();
+  const ready = await waitForGrecaptcha(10000);
+  console.log("grecaptcha ready after", (Date.now() - t0) + "ms", "ready=" + ready);
+  if (!ready) {
+    console.warn("grecaptcha never loaded after 10s; sending without token");
+    return null;
+  }
+  return new Promise((resolve) => {
+    try {
+      grecaptcha.ready(async () => {
+        try {
+          const tok = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "signup" });
+          resolve(tok || null);
+        } catch (e) {
+          console.warn("grecaptcha.execute failed", e);
+          resolve(null);
+        }
+      });
+    } catch (e) {
+      console.warn("grecaptcha.ready failed", e);
+      resolve(null);
+    }
+  });
+}
+
+async function sendVerificationEmailViaResend(user, recaptchaToken) {
+  try {
+    const token = await user.getIdToken();
+    const res = await fetch(SEND_VERIFICATION_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token
+      },
+      body: JSON.stringify({ recaptchaToken: recaptchaToken || null })
+    });
+    if (!res.ok) {
+      console.warn("sendVerificationEmail returned", res.status);
+      return false;
+    }
+    // Stash a timestamp + delivery hint so /verify-email knows we just
+    // fired a send and can present the cooldown immediately instead of
+    // a tappable Resend button (which the user reads as "nothing
+    // happened, must try again"). Cleared once verified.
+    try {
+      sessionStorage.setItem("vulu.lastVerifyEmailSentAt", String(Date.now()));
+    } catch (e) {}
+    return true;
+  } catch (e) {
+    console.warn("sendVerificationEmail failed", e);
+    return false;
+  }
+}
+
+async function handoffToApp(user) {
+  // Cross-origin handoff via short-lived custom token (per
+  // CODE_SIGNUP_FLOW.md). Auth state is per-origin in Firebase Auth,
+  // so we mint a custom token here and the app reads it from the URL.
+  try {
+    // Refresh client-side user state + force a fresh ID token. The cached
+    // token still carries email_verified: false after the user verifies in
+    // another tab, causing getAuthHandoffToken to 403. user.reload pulls
+    // the new server state; getIdToken(true) bypasses the local cache.
+    try { await user.reload(); } catch (e) { /* non-fatal */ }
+    const idToken = await user.getIdToken(true);
+    const res = await fetch(GET_AUTH_HANDOFF_TOKEN_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + idToken
+      },
+      body: JSON.stringify({})
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok && data.token) {
+      window.location.replace(APP_ORIGIN + "/?authToken=" + encodeURIComponent(data.token));
+      return;
+    }
+    // Fallback: redirect anyway. App will re-prompt for signin if it
+    // can't establish session.
+    console.warn("getAuthHandoffToken returned", res.status, data);
+    window.location.replace(APP_ORIGIN + "/");
+  } catch (e) {
+    console.warn("Custom-token handoff failed", e);
+    window.location.replace(APP_ORIGIN + "/");
+  }
+}
+
+// Guard against the onAuthStateChanged listener (registered at the bottom of
+// this script) racing the form-submit handler's ensureUserDoc write. When
+// createUserWithEmailAndPassword resolves, the listener fires and would
+// redirect to /verify-email mid-write. Setting this flag tells the listener
+// to step aside and let the form handler control the redirect.
+let inSignupFlow = false;
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  clearError();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  if (!email || password.length < 8) {
+    showError("Email and an 8+ character password are required.");
+    return;
+  }
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Creating account...";
+  inSignupFlow = true;
+  try {
+    // Mint the reCAPTCHA token BEFORE creating the auth account. If
+    // reCAPTCHA refuses (network error, blocker), token is null and the
+    // server-side sendVerificationEmail will reject -- preferable to
+    // creating an unverifiable account first. Tokens are bound to the
+    // "signup" action and expire in 2 minutes, so we capture this just
+    // before the network round-trip.
+    const recaptchaToken = await getRecaptchaToken();
+    const cred = await auth.createUserWithEmailAndPassword(email, password);
+    await ensureUserDoc(cred.user, { provider: "password" });
+    // Claim invite code BEFORE sending the verification email so the
+    // tier upgrade to "founding_member" lands first. If the user came
+    // in without an invite code, this is a no-op.
+    await claimInviteCodeNow(cred.user);
+    await sendVerificationEmailViaResend(cred.user, recaptchaToken);
+    window.location.replace("/verify-email");
+  } catch (err) {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Create my account";
+    const code = err && err.code;
+    if (code === "auth/email-already-in-use") {
+      showError("That email is already registered. Sign in instead.");
+    } else if (code === "auth/invalid-email") {
+      showError("That doesn’t look like a valid email.");
+    } else if (code === "auth/weak-password") {
+      showError("Password is too weak. Try 8+ characters.");
+    } else {
+      showError(err.message || "Something went wrong. Try again.");
+    }
+  }
+});
+
+googleBtn.addEventListener("click", async () => {
+  clearError();
+  googleBtn.disabled = true;
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    // signInWithRedirect (not popup) works across iOS Safari, embedded
+    // webviews, and popup-blocking environments. After the redirect
+    // round-trip Google returns to this page, getRedirectResult below
+    // picks up the signed-in user, ensureUserDoc runs, then
+    // onAuthStateChanged handles the cross-origin handoff.
+    await auth.signInWithRedirect(provider);
+    // Page navigates away after the call resolves; control doesn't
+    // return here in the normal path.
+  } catch (err) {
+    googleBtn.disabled = false;
+    showError(err.message || "Google sign-in failed.");
+  }
+});
+
+// On every page load, check if we're returning from a Google redirect.
+// If so, ensure the users/{uid} doc exists for the (possibly new)
+// signin BEFORE attaching the auth-state listener, otherwise the
+// listener fires the handoff and we race the doc creation.
+;(async () => {
+  try {
+    const result = await auth.getRedirectResult();
+    if (result && result.user) {
+      const isNew = !!(result.additionalUserInfo && result.additionalUserInfo.isNewUser);
+      await ensureUserDoc(result.user, { provider: "google.com" });
+      if (!isNew) {
+        // Existing Google user signing back in via /signup — fine,
+        // just let the auth-state listener handle the handoff.
+      }
+    }
+  } catch (err) {
+    // Common shapes: auth/account-exists-with-different-credential
+    // (rare — same email signed up earlier via password). Surface
+    // these to the user; otherwise log and continue.
+    const code = err && err.code;
+    if (code === "auth/account-exists-with-different-credential") {
+      showError("That email already has a Vulu account with a password. Sign in with email + password instead.");
+    } else if (code && code !== "auth/no-auth-event") {
+      showError(err.message || "Google sign-in failed.");
+    }
+    console.warn("getRedirectResult error:", err);
+  }
+
+  // If already signed in (post-redirect OR cached LOCAL persistence),
+  // skip the form. BUT: when the user just submitted the signup form, the
+  // form handler is mid-flight calling ensureUserDoc + sendVerificationEmail
+  // before its own redirect — we step aside so it can finish.
+  auth.onAuthStateChanged((user) => {
+    if (inSignupFlow) return;
+    if (user) {
+      if (user.emailVerified) {
+        handoffToApp(user);
+      } else {
+        window.location.replace("/verify-email");
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

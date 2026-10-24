@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign in your TV · Vulu</title>
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 30% 15%, rgba(73,130,255,0.12), rgba(0,0,0,0) 35%),
+      radial-gradient(circle at 70% 85%, rgba(179,77,255,0.10), rgba(0,0,0,0) 35%),
+      #0a0a0a;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  .card {
+    width: min(1100px, 96vw);
+    background: rgba(20,20,24,0.92);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  }
+  .brand {
+    font-size: 56px; font-weight: 800; letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #4982ff 0%, #b34dff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin: 0;
+  }
+  h1 { font-size: 40px; font-weight: 700; color: #fff; margin: 4px 0 8px; }
+  .sub { font-size: 20px; color: #b8b8c4; margin: 0 0 30px; max-width: 720px; }
+  .body {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .qr-frame {
+    width: 340px; height: 340px;
+    background: #fff;
+    padding: 18px; box-sizing: border-box;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .qr-frame img { width: 100%; height: 100%; display: block; }
+  .info { display: flex; flex-direction: column; gap: 6px; }
+  .step { font-size: 16px; color: #888; text-transform: uppercase; letter-spacing: 0.08em; }
+  .url { font-size: 32px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .code {
+    font-family: "Menlo","Consolas",monospace;
+    font-size: 48px; font-weight: 700; letter-spacing: 0.18em;
+    color: #fff;
+    background: linear-gradient(90deg, rgba(73,130,255,0.18), rgba(179,77,255,0.18));
+    border: 2px solid rgba(73,130,255,0.5);
+    border-radius: 14px;
+    padding: 14px 22px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .status {
+    font-size: 16px; color: #b8b8c4;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .status::before {
+    content: ""; width: 12px; height: 12px;
+    border-radius: 50%;
+    background: #4982ff;
+    box-shadow: 0 0 14px rgba(73,130,255,0.6);
+    animation: pulse 1.6s ease-in-out infinite;
+  }
+  .status.err::before { background: #ef4444; animation: none; }
+  .status.ok::before { background: #22c55e; animation: none; }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.15); }
+  }
+  .refresh {
+    margin-top: 24px;
+    padding: 12px 22px;
+    background: rgba(255,255,255,0.06);
+    border: 2px solid rgba(255,255,255,0.14);
+    border-radius: 12px;
+    color: #cdd9ef;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    display: none;
+  }
+  .refresh:focus, .refresh:focus-visible {
+    outline: 4px solid #fff;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">vulu</div>
+    <h1>Sign in your TV</h1>
+    <div class="sub">Scan the QR code with your phone, or visit <strong style="color:#fff;">vulutv.com/link</strong> on any device and enter the code below.</div>
+    <div class="body">
+      <div class="qr-frame" id="qrFrame">
+        <div style="color:#000;font-size:14px;text-align:center;padding:20px;">Generating code…</div>
+      </div>
+      <div class="info">
+        <div class="step">On your phone:</div>
+        <div class="url">vulutv.com/link</div>
+        <div class="step">Code:</div>
+        <div class="code" id="code">— — — —</div>
+        <div class="status" id="status">Connecting…</div>
+        <button class="refresh" id="refreshBtn" type="button">Get a new code</button>
+      </div>
+    </div>
+  </div>
+
+<script>
+// Standalone TV sign-in page. No Firebase SDK, no app dependencies --
+// just three fetches to Cloud Functions plus a QR image render. Hosted
+// on vulutv.com so it works regardless of vulu-app.web.app's state.
+// On approval, redirects to vulu-app.web.app/?authToken=<custom token>
+// where the app's consumeAuthTokenFromUrl picks it up and signs in.
+
+var REQUEST_ENDPOINT = "https://us-central1-vulu-ebcd6.cloudfunctions.net/requestDeviceLinkCode";
+var POLL_ENDPOINT    = "https://us-central1-vulu-ebcd6.cloudfunctions.net/pollDeviceLink";
+var APP_ORIGIN       = "https://vulu-app.web.app";
+var POLL_INTERVAL_MS = 2500;
+
+var state = { deviceId: null, code: null, claimSecret: null, pollTimer: 0 };
+var qrFrame = document.getElementById("qrFrame");
+var codeEl = document.getElementById("code");
+var statusEl = document.getElementById("status");
+var refreshBtn = document.getElementById("refreshBtn");
+
+function setStatus(text, kind) {
+  statusEl.textContent = text;
+  statusEl.className = "status" + (kind ? " " + kind : "");
+}
+
+function renderQr(text) {
+  qrFrame.innerHTML = "";
+  // Use a remote image API. Fallbacks if one is blocked. Each provider
+  // tried in turn until one loads or all fail. Same approach as the
+  // TV overlay in app/index.html.
+  var providers = [
+    "https://api.qrserver.com/v1/create-qr-code/?size=300x300&ecc=M&data=" + encodeURIComponent(text),
+    "https://quickchart.io/qr?text=" + encodeURIComponent(text) + "&size=300&margin=1&ecLevel=M"
+  ];
+  var attempt = 0;
+  function tryNext() {
+    if (attempt >= providers.length) {
+      // Last resort: show URL as text
+      qrFrame.innerHTML = "";
+      var d = document.createElement("div");
+      d.style.cssText = "color:#000;font-size:14px;text-align:center;padding:20px;word-break:break-all;";
+      d.textContent = text;
+      qrFrame.appendChild(d);
+      return;
+    }
+    var img = new Image();
+    img.alt = "QR code";
+    img.referrerPolicy = "no-referrer";
+    img.onerror = function () {
+      attempt++;
+      tryNext();
+    };
+    img.onload = function () {
+      qrFrame.innerHTML = "";
+      img.style.cssText = "width:100%;height:100%;display:block;";
+      qrFrame.appendChild(img);
+    };
+    img.src = providers[attempt];
+  }
+  tryNext();
+}
+
+function stopPoll() {
+  if (state.pollTimer) {
+    clearTimeout(state.pollTimer);
+    state.pollTimer = 0;
+  }
+}
+
+function schedulePoll() {
+  state.pollTimer = setTimeout(pollOnce, POLL_INTERVAL_MS);
+}
+
+function pollOnce() {
+  if (!state.deviceId) return;
+  fetch(POLL_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ deviceId: state.deviceId, claimSecret: state.claimSecret })
+  }).then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data || !data.ok) { schedulePoll(); return; }
+      if (data.status === "approved" && data.customToken) {
+        stopPoll();
+        setStatus("Signing in…", "ok");
+        // Hand off to the app. The app's consumeAuthTokenFromUrl picks
+        // up authToken from the URL and calls signInWithCustomToken.
+        // Cache-bust the redirect with a timestamp. Samsung Tizen
+        // WebViews aggressively cache vulu-app.web.app HTML even
+        // when Firebase Hosting sends no-cache headers — the cached
+        // copy may have an older boot path that hangs on certain
+        // Firebase Auth operations. Appending ?v=<now> forces a
+        // fresh fetch every time.
+        var bust = Date.now().toString(36);
+        window.location.replace(APP_ORIGIN + "/?authToken=" + encodeURIComponent(data.customToken) + "&v=" + bust);
+        return;
+      }
+      if (data.status === "expired" || data.status === "claimed") {
+        stopPoll();
+        setStatus("Code " + data.status + ". Get a new one.", "err");
+        refreshBtn.style.display = "inline-block";
+        try { refreshBtn.focus(); } catch (e) {}
+        return;
+      }
+      // Still pending
+      schedulePoll();
+    })
+    .catch(function () {
+      // Network blip; keep trying
+      schedulePoll();
+    });
+}
+
+function requestCode() {
+  setStatus("Connecting…");
+  refreshBtn.style.display = "none";
+  fetch(REQUEST_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({})
+  }).then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data || !data.ok) {
+        setStatus("Couldn't get a code. Check your TV's internet connection.", "err");
+        refreshBtn.style.display = "inline-block";
+        return;
+      }
+      state.deviceId = data.deviceId;
+      state.claimSecret = data.claimSecret || null;
+      state.code = data.code;
+      codeEl.textContent = data.code;
+      var normalized = String(data.code || "").replace(/-/g, "");
+      renderQr("https://vulutv.com/link?code=" + encodeURIComponent(normalized));
+      setStatus("Waiting for sign-in on your phone…");
+      schedulePoll();
+    })
+    .catch(function () {
+      setStatus("Network error. Check your TV's internet connection.", "err");
+      refreshBtn.style.display = "inline-block";
+    });
+}
+
+refreshBtn.addEventListener("click", requestCode);
+refreshBtn.addEventListener("keydown", function (e) {
+  if (e.key === "Enter" || e.keyCode === 13 || e.keyCode === 32) {
+    e.preventDefault();
+    requestCode();
+  }
+});
+
+requestCode();
+</script>
+</body>
+</html>

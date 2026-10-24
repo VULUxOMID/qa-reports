@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Vulu is a personal video library. Save videos from any social platform, watch ad-free on any device. Starter $7.99, Plus $14.99, Pro $19.99. Free trial. Founding members lock in lifetime pricing."/>
+  <meta name="theme-color" content="#000000"/>
+  <title>Vulu — Purpose-built video. The way it was meant to be.</title>
+
+  <link rel="icon" type="image/svg+xml" href="/assets/vulu-mark.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0d0d0d">
+  <link rel="apple-touch-icon" href="/assets/vulu-mark.svg">
+  <script src="/pwa-register.js" defer></script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vulu — Purpose-built video. The way it was meant to be."/>
+  <meta property="og:description" content="Vulu is a personal video library. Save videos from any social platform, watch ad-free on any device. Starter $7.99, Plus $14.99, Pro $19.99. Founding members lock in lifetime pricing."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://vulutv.com"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+</head>
+<body>
+
+<div class="bloom"></div>
+
+<!-- ================================ NAV ================================ -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand">
+      <img src="/assets/vulu-wordmark-smoothed.svg" alt="Vulu"/>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/save" class="nav__link">Save a video</a></li>
+      <li><a href="/features.html" class="nav__link">Features</a></li>
+      <li><a href="/how-it-works.html" class="nav__link">How it works</a></li>
+      <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+      <li><a href="/converter.html" class="nav__link">Converter</a></li>
+      <li><a href="/about.html" class="nav__link">About</a></li>
+      <li><a href="/blog.html" class="nav__link">Blog</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="/signin" class="btn btn--ghost">Sign in</a>
+      <a href="/signup" class="btn btn--primary">Sign up</a>
+    </div>
+    <button class="nav__mobile-toggle" aria-label="Menu" id="navToggle"><span></span></button>
+  </div>
+</nav>
+
+<!-- ================================ HERO ================================ -->
+<header class="hero">
+  <div class="hero__grid"></div>
+  <div class="hero__inner">
+    <img src="/assets/vulu-wordmark-smoothed.svg" alt="Vulu" class="hero__lockup"/>
+    <p class="hero__subtagline" style="font-size: clamp(28px, 4.5vw, 48px); font-weight: 600; color: #c8553d; text-align: center; margin: calc(-1 * var(--space-4)) auto var(--space-3); line-height: 1.15;">It&rsquo;s time to look up!</p>
+    <h1 class="hero__title" style="font-size: clamp(28px, 4vw, 44px); margin-top: var(--space-4);">Purpose-built video.<br/><span class="gradient-text">The way it was meant to be.</span></h1>
+    <p class="hero__subtitle">For less than a fancy coffee, you can have your own TV channel.</p>
+    <div class="hero__cta-cluster" style="display:flex;flex-direction:column;align-items:center;gap:var(--space-3);margin-top:var(--space-4);">
+      <a class="btn btn--primary" href="/signup" style="padding:14px 28px;font-size:16px;">Create your account</a>
+      <a class="btn btn--ghost" href="https://chromewebstore.google.com/detail/save-to-vulu/lbmjfjembhgphcijkndmoifcbialbkpp" target="_blank" rel="noopener" style="padding:14px 28px;font-size:16px;">Get the Chrome extension</a>
+      <a href="#waitlist" style="font-size:13px;color:var(--text-tertiary);text-decoration:underline;text-underline-offset:3px;">Or sign up for launch updates</a>
+    </div>
+    <div class="hero__social-proof">
+      <span>Starter $7.99 &middot; Plus $14.99 &middot; Pro $19.99</span>
+      <span>&bull;</span>
+      <span>Founding members lock lifetime pricing</span>
+      <span>&bull;</span>
+      <a href="/pricing.html" style="color: inherit; text-decoration: underline; text-underline-offset: 2px;">See plans</a>
+    </div>
+
+    <div class="hero__preview">
+      <div class="hero__preview-frame">
+        <div class="hero__preview-inner" style="padding:0;">
+          <video
+            controls
+            preload="none"
+            playsinline
+            poster="/media/product-tour-poster.jpg"
+            style="display:block;width:100%;height:auto;border-radius:inherit;"
+          >
+            <source src="/media/product-tour.mp4" type="video/mp4"/>
+            Sorry, your browser doesn't support embedded video. <a href="/media/product-tour.mp4">Download the tour</a>.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================================ PLATFORMS ================================ -->
+<section class="platforms">
+  <div class="container">
+    <div class="platforms__label">Save from anywhere</div>
+    <div class="platforms__list">
+      <div class="platforms__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5a3 3 0 0 0-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        YouTube
+      </div>
+      <div class="platforms__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </div>
+      <div class="platforms__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4C1.3 2.7.9 3.4.6 4.2.3 5 .1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.2 2.1.5 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.6.5 2.9.5 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.1-.2 2.9-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.6.5-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.2-2.1-.5-2.9-.3-.8-.7-1.5-1.4-2.2C21.3 1.3 20.6.9 19.8.6 19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 12 18.2 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.2a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+        Instagram
+      </div>
+      <div class="platforms__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.3 6.8a5.9 5.9 0 0 1-3.8-1.4v9.3a6.3 6.3 0 1 1-5.4-6.2v2.6a3.7 3.7 0 1 0 2.6 3.6V0h2.6a5.8 5.8 0 0 0 .1 1.2A5.9 5.9 0 0 0 19.3 6v.8z"/></svg>
+        TikTok
+      </div>
+      <div class="platforms__item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-1.9.9-1.9 1.9V12h3.3l-.5 3.5h-2.8v8.4A12 12 0 0 0 24 12z"/></svg>
+        Facebook
+      </div>
+      <div class="platforms__item" style="opacity: 0.5;">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 6v6c0 5 3.5 9.7 8 10.9 4.5-1.2 8-5.9 8-10.9V6l-8-4z"/></svg>
+        And more
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FEATURES ================================ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow gradient-text">Why Vulu</div>
+      <h2>Your library. Your rules.</h2>
+      <p>The videos you love, in one place, forever. You decide what plays next. The video stays even if the creator takes it down. Your library stays put.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </div>
+        <h3>Save from anywhere</h3>
+        <p>One-click capture from YouTube, X, Instagram, TikTok, Facebook and more. Our browser extension handles the rest. Videos land in your library in seconds.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Watch on any screen</h3>
+        <p>Phone, laptop, tablet, TV. Your library goes where you go. Pick up where you left off on any device with seamless progress sync.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.83z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        </div>
+        <h3>You're in control.</h3>
+        <p>Pick what plays and when. Watch in any order. Pause whenever. The library does what you ask, and only what you ask. Ad-free, always.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Forever yours</h3>
+        <p>If a creator deletes a video or a platform takes it down, yours is still there. Vulu keeps a local-feeling copy that plays even if the original vanishes.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Actually findable</h3>
+        <p>Title, tags, platform, date saved. Search your library the way you think about it. Recommendations come from your taste, tuned to what you actually save and watch.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Private by default</h3>
+        <p>Your library is yours alone. No public profile, no follow graph, no engagement-farming feed. Recommendations grounded in your taste, not platform metrics. Built on Vulu Cloud Platform with end-to-end account security.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ PATENTS / IP ================================ -->
+<section style="padding: var(--space-7) 0;">
+  <div class="container">
+    <div class="feature-card reveal" style="max-width: 760px; margin: 0 auto; text-align: center;">
+      <div class="feature-card__icon" style="margin-left: auto; margin-right: auto;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="eyebrow gradient-text" style="display: inline-block; margin-bottom: var(--space-3);">Patent-pending technology</div>
+      <h3 style="margin-bottom: var(--space-3);">Built on protected IP.</h3>
+      <p>Protected by a 20+ patent portfolio spanning video capture, identity-governed AI, content provenance, and personal media library architecture.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ LIBRARY ROW ================================ -->
+<section class="library">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow gradient-text">Your personal lineup</div>
+      <h2>A library that feels like home.</h2>
+      <p>Clean rows. Big thumbnails. Everything where you left it. Vulu looks and feels like the streaming apps you already know, except it's filled with what YOU saved.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="library__rail">
+      <div class="library__card">
+        <div class="library__card-bg library__card-bg--1"></div>
+        <span class="library__card-platform">YouTube</span>
+        <div class="library__card-overlay">
+          <div class="library__card-title">Late night studio session</div>
+          <div class="library__card-meta">18:42 &bull; Saved 2d ago</div>
+        </div>
+      </div>
+      <div class="library__card">
+        <div class="library__card-bg library__card-bg--2"></div>
+        <span class="library__card-platform">X</span>
+        <div class="library__card-overlay">
+          <div class="library__card-title">The moment the crowd lost it</div>
+          <div class="library__card-meta">0:47 &bull; Saved 5d ago</div>
+        </div>
+      </div>
+      <div class="library__card">
+        <div class="library__card-bg library__card-bg--3"></div>
+        <span class="library__card-platform">Instagram</span>
+        <div class="library__card-overlay">
+          <div class="library__card-title">Sunrise over the coast</div>
+          <div class="library__card-meta">1:02 &bull; Saved 1w ago</div>
+        </div>
+      </div>
+      <div class="library__card">
+        <div class="library__card-bg library__card-bg--4"></div>
+        <span class="library__card-platform">TikTok</span>
+        <div class="library__card-overlay">
+          <div class="library__card-title">That one recipe everyone tried</div>
+          <div class="library__card-meta">0:58 &bull; Saved 1w ago</div>
+        </div>
+      </div>
+      <div class="library__card">
+        <div class="library__card-bg library__card-bg--5"></div>
+        <span class="library__card-platform">YouTube</span>
+        <div class="library__card-overlay">
+          <div class="library__card-title">Behind the scenes tour</div>
+          <div class="library__card-meta">12:15 &bull; Saved 2w ago</div>
+        </div>
+      </div>
+      <div class="library__card">
+        <div class="library__card-bg library__card-bg--6"></div>
+        <span class="library__card-platform">Facebook</span>
+        <div class="library__card-overlay">
+          <div class="library__card-title">Family reunion highlights</div>
+          <div class="library__card-meta">4:22 &bull; Saved 3w ago</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ HOW IT WORKS ================================ -->
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow gradient-text">How it works</div>
+      <h2>Three clicks. Forever yours.</h2>
+      <p>No complicated workflow. No wrangling URLs. No downloading sketchy apps. Just install, save, and watch.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <h3>Install the extension</h3>
+        <p>One click from the Chrome Web Store. Vulu lives in your toolbar, quiet until you need it.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Save from anywhere</h3>
+        <p>See a video you want to keep? Hit the Vulu button. It's in your library before you finish the next scroll.</p>
+      </div>
+      <div class="step reveal">
+        <h3>Watch on any screen</h3>
+        <p>Open vulutv.com on your phone, laptop, tablet, or TV. Your library is right there, synced and ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FINAL CTA ================================ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Your videos deserve<br/><span class="gradient-text">a real home.</span></h2>
+    <p>Sign up now to lock in founding-member pricing — the first 10,000 paid subscribers keep $5 single / $10 family per month for life.</p>
+    <form class="hero__form" id="waitlist" onsubmit="event.preventDefault(); submitWaitlist(this);">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email"/>
+      <button type="submit" class="btn btn--primary">Sign up</button>
+    </form>
+    <div class="hero__social-proof" style="margin-top: var(--space-4);">
+      <span>No credit card to sign up</span>
+      <span>&bull;</span>
+      <span>Cancel any time</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FOOTER ================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <img src="/assets/vulu-wordmark-smoothed.svg" alt="Vulu"/>
+        <p>Clip it. Play it. Your videos, on any screen. Built for people who love video enough to keep it.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/features.html">Features</a></li>
+          <li><a href="/how-it-works.html">How it works</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="https://app.vulutv.com">Open app</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="mailto:hello@vulutv.com">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/dmca">DMCA</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__patents">Backed by 20+ patents across video capture, AI personalization, and content governance.</div>
+    <div class="footer__bottom">
+      <div>&copy; 2026 Vulu LLC. All rights reserved.</div>
+      <div class="footer__social">
+        <a href="#" aria-label="X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 5 .3 4.2.6c-.8.3-1.5.7-2.2 1.4C1.3 2.7.9 3.4.6 4.2.3 5 .1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.2 2.1.5 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.6.5 2.9.5 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.1-.2 2.9-.5.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.6.5-2.9.1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.2-2.1-.5-2.9-.3-.8-.7-1.5-1.4-2.2C21.3 1.3 20.6.9 19.8.6 19 .3 18.2.1 16.9.1 15.7 0 15.3 0 12 0zm0 5.8A6.2 6.2 0 1 0 12 18.2 6.2 6.2 0 0 0 12 5.8zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM18.4 4.2a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5a3 3 0 0 0-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

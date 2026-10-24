@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Vulu Converter — turn any video URL into a clean MP4 on your own computer. 100% local. Free with any Vulu Pro subscription."/>
+<title>Vulu Converter — Any video URL to MP4, on your computer</title>
+<link rel="icon" type="image/svg+xml" href="/assets/vulu-mark.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"/>
+<link rel="stylesheet" href="/css/main.css"/>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0d0d0d">
+<link rel="apple-touch-icon" href="/assets/vulu-mark.svg">
+<script src="/pwa-register.js" defer></script>
+
+<!-- Open Graph -->
+<meta property="og:title" content="Vulu Converter — Any video URL to MP4, on your computer"/>
+<meta property="og:description" content="A tiny desktop app that turns any video URL into a clean MP4 file. Runs 100% on your computer. Free with any Vulu Pro subscription."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://vulutv.com/converter"/>
+
+<style>
+  /* Converter-page-specific bits layered on top of /css/main.css. */
+  .download-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+  }
+  @media (max-width: 700px) {
+    .download-grid { grid-template-columns: 1fr; }
+  }
+  .download-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .download-card__icon {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, #4a8cff 0%, #a36bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    font-family: "Poppins", -apple-system, sans-serif;
+  }
+  .download-card__label {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .download-card__meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: var(--space-4);
+  }
+  .download-card .btn { min-width: 200px; }
+  .download-card.coming-soon { opacity: 0.6; }
+  .download-card.coming-soon .btn { pointer-events: none; cursor: not-allowed; }
+  .checksum {
+    font-family: ui-monospace, "SF Mono", Consolas, monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    word-break: break-all;
+    margin-top: var(--space-3);
+    padding: 8px 10px;
+    background: rgba(0,0,0,0.35);
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .checksum .label {
+    display: inline-block;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    margin-right: 4px;
+  }
+  .conv-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-5);
+  }
+  @media (max-width: 800px) { .conv-steps { grid-template-columns: 1fr; } }
+  .conv-step {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: var(--space-4);
+  }
+  .conv-step__num {
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    background: linear-gradient(135deg, #4a8cff 0%, #a36bff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+  .conv-step h3 { font-size: 18px; margin: 0 0 var(--space-2); }
+  .conv-step p { font-size: 14px; color: rgba(255,255,255,0.72); margin: 0; line-height: 1.55; }
+  .faq details {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+  .faq details[open] {
+    background: rgba(255,255,255,0.05);
+  }
+  .faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq summary::after {
+    content: "+";
+    font-size: 22px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p {
+    margin-top: var(--space-3);
+    color: rgba(255,255,255,0.72);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .price-callout {
+    text-align: center;
+    padding: var(--space-5) var(--space-4);
+    background: linear-gradient(135deg, rgba(74,140,255,0.08), rgba(163,107,255,0.08));
+    border: 1px solid rgba(163,107,255,0.2);
+    border-radius: 16px;
+    margin-top: var(--space-4);
+  }
+  .price-callout .row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+    margin-top: var(--space-3);
+  }
+  .price-callout .p {
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+  }
+  .price-callout .p .small { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.6); }
+  .price-callout .p--pro { background: linear-gradient(135deg, #4a8cff 0%, #a36bff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+</style>
+</head>
+<body>
+
+<div class="bloom"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand"><img src="/assets/vulu-wordmark-smoothed.svg" alt="Vulu"/></a>
+    <ul class="nav__links">
+      <li><a href="/features.html" class="nav__link">Features</a></li>
+      <li><a href="/how-it-works.html" class="nav__link">How it works</a></li>
+      <li><a href="/pricing.html" class="nav__link">Pricing</a></li>
+      <li><a href="/converter.html" class="nav__link is-active">Converter</a></li>
+      <li><a href="/about.html" class="nav__link">About</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="/signin" class="btn btn--ghost">Sign in</a>
+      <a href="/signup" class="btn btn--primary">Sign up</a>
+    </div>
+    <button class="nav__mobile-toggle" aria-label="Menu" id="navToggle"><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom: var(--space-6);">
+  <div class="hero__grid"></div>
+  <div class="hero__inner">
+    <div class="eyebrow gradient-text">Vulu Converter</div>
+    <h1 class="hero__title">Any video URL. <span class="gradient-text">One clean MP4.</span></h1>
+    <p class="hero__subtitle">
+      A tiny desktop app that turns any video link into a proper MP4 file — saved right to your computer.
+      Nothing leaves your machine. Nothing to install beyond one file.
+    </p>
+  </div>
+</header>
+
+<!-- ================================ DOWNLOAD SECTION ================================ -->
+<section id="download" style="padding-top: 0;">
+  <div class="container" style="max-width: 900px;">
+    <div class="download-grid">
+
+      <!-- Windows -->
+      <div class="download-card">
+        <div class="download-card__icon">Win</div>
+        <div class="download-card__label">Windows</div>
+        <div class="download-card__meta">Windows 10 / 11 · 64-bit · ~120 MB</div>
+        <!--
+          Paid product. Direct-download link removed 2026-07-27.
+          Button now points at #buy anchor / notify form until task #125
+          (Stripe Checkout + signed-URL download flow) ships. When #125
+          lands, swap href to the createConverterCheckout Cloud Function
+          endpoint and the download becomes gated behind a completed
+          Stripe session. Installer stays private in Firebase Storage
+          at gs://vulu-ebcd6.firebasestorage.app/converter/ until then.
+        -->
+        <div class="download-card__price" style="font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: 800; margin-bottom: 8px;">$19.99</div>
+        <div class="download-card__meta" style="margin-top: -4px; margin-bottom: var(--space-3);">$9.99 with Vulu Pro subscription</div>
+        <a class="btn btn--primary" href="#buy">
+          Notify me when ready
+        </a>
+        <div class="checksum">
+          <span class="label">SHA-256 (verify after purchase):</span>
+          22075c1ff0de7664ee1cd14d70b9f67f5d77ee4cd7fbf481b7747fb8659fc5d3
+        </div>
+      </div>
+
+      <!-- Mac (coming soon) -->
+      <div class="download-card coming-soon">
+        <div class="download-card__icon">Mac</div>
+        <div class="download-card__label">macOS <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.5);">— coming soon</span></div>
+        <div class="download-card__meta">macOS 12+ · Apple Silicon &amp; Intel · ~130 MB</div>
+        <a class="btn btn--ghost" aria-disabled="true">
+          Coming soon
+        </a>
+        <div class="checksum">
+          <span class="label">SHA-256:</span>
+          &lt;available on release&gt;
+        </div>
+      </div>
+
+    </div>
+
+    <p style="text-align: center; margin-top: var(--space-4); font-size: 13px; color: rgba(255,255,255,0.5);">
+      One file. No account required to use the Converter. Free to try — see pricing below.
+    </p>
+  </div>
+</section>
+
+<!-- ================================ HOW IT WORKS ================================ -->
+<section style="padding-top: var(--space-6);">
+  <div class="container" style="max-width: 900px;">
+    <div style="text-align: center;">
+      <div class="eyebrow gradient-text">How it works</div>
+      <h2 style="font-size: clamp(28px, 4vw, 40px); margin-top: var(--space-2);">Three steps. That's the whole app.</h2>
+    </div>
+    <div class="conv-steps">
+      <div class="conv-step">
+        <div class="conv-step__num">1</div>
+        <h3>Paste a video URL</h3>
+        <p>YouTube, Vimeo, TikTok, X, Instagram, Facebook, direct MP4 stream URLs — over a thousand sites work out of the box.</p>
+      </div>
+      <div class="conv-step">
+        <div class="conv-step__num">2</div>
+        <h3>Pick a quality</h3>
+        <p>Best available, 1080p, 720p, 480p, or audio-only. The Converter fetches the highest quality the site publishes.</p>
+      </div>
+      <div class="conv-step">
+        <div class="conv-step__num">3</div>
+        <h3>Get your MP4</h3>
+        <p>Saved to Downloads → Vulu Converter. Standard MP4. Plays anywhere. Yours to keep, edit, upload to Vulu, whatever you want.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ PRIVACY POSTURE ================================ -->
+<section style="padding: var(--space-6) 0;">
+  <div class="container" style="max-width: 800px; text-align: center;">
+    <div class="eyebrow gradient-text">100% local</div>
+    <h2 style="font-size: clamp(24px, 3.5vw, 34px); margin-top: var(--space-2);">Nothing leaves your computer.</h2>
+    <p style="color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.6; margin-top: var(--space-3);">
+      The Converter runs entirely on your machine. When you paste a URL, your computer talks directly
+      to the source site — Vulu servers are never in the loop. We don't see what you download.
+      We don't log it. We don't have telemetry. The app doesn't even need an internet connection to us,
+      only to the source site you're pulling from.
+    </p>
+  </div>
+</section>
+
+<!-- ================================ PRICING ================================ -->
+<section style="padding-top: 0;">
+  <div class="container" style="max-width: 900px;">
+    <div style="text-align: center;">
+      <div class="eyebrow gradient-text">Pricing</div>
+      <h2 style="font-size: clamp(28px, 4vw, 40px); margin-top: var(--space-2);">One time. Own it forever.</h2>
+    </div>
+    <div class="price-callout">
+      <div class="row">
+        <div class="p">
+          $19.99 <span class="small">one time · standalone</span>
+        </div>
+        <div class="p p--pro">
+          $9.99 <span class="small">for Vulu Pro subscribers · 50% off</span>
+        </div>
+      </div>
+      <p style="margin-top: var(--space-4); color: rgba(255,255,255,0.7); font-size: 14px;">
+        The Converter also stacks with the Founding Member and Vet discount codes if you have one.
+        <br/>
+        <a href="/pricing.html" class="link">See all Vulu plans →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ VERIFY SECTION ================================ -->
+<section style="padding: var(--space-6) 0;">
+  <div class="container" style="max-width: 800px;">
+    <div style="text-align: center;">
+      <div class="eyebrow gradient-text">For the security-conscious</div>
+      <h2 style="font-size: clamp(24px, 3.5vw, 32px); margin-top: var(--space-2);">Verify your download.</h2>
+    </div>
+    <p style="color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.65; margin-top: var(--space-3); text-align: center;">
+      Every installer we publish comes with a published SHA-256 checksum (see the download cards above).
+      To verify yours matches, run this one-liner in a terminal after downloading:
+    </p>
+    <div style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: var(--space-4); margin-top: var(--space-4); font-family: ui-monospace, 'SF Mono', Consolas, monospace; font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.85);">
+      <div style="color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Windows (PowerShell)</div>
+      <div>Get-FileHash -Algorithm SHA256 "Vulu Converter Setup.exe"</div>
+      <div style="color: rgba(255,255,255,0.5); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: var(--space-3); margin-bottom: 4px;">macOS / Linux (Terminal)</div>
+      <div>shasum -a 256 "Vulu Converter.dmg"</div>
+    </div>
+    <p style="color: rgba(255,255,255,0.55); font-size: 13px; margin-top: var(--space-3); text-align: center;">
+      The hash your machine produces should exactly match the one on the download card. If it doesn't, delete the file and re-download — it's either corrupted or tampered with.
+    </p>
+  </div>
+</section>
+
+<!-- ================================ FAQ ================================ -->
+<section class="faq" style="padding-top: 0;">
+  <div class="container" style="max-width: 800px;">
+    <div style="text-align: center;">
+      <div class="eyebrow gradient-text">FAQ</div>
+      <h2 style="font-size: clamp(28px, 4vw, 36px); margin-top: var(--space-2); margin-bottom: var(--space-5);">The common questions.</h2>
+    </div>
+
+    <details>
+      <summary>Why is Windows warning me the file isn't safe?</summary>
+      <p>
+        You'll see "Windows protected your PC" on first run. This is Microsoft's SmartScreen warning for
+        any newly-published installer that hasn't yet built reputation — it appears for every small
+        developer's software until enough downloads and time accumulate. We're actively working on a
+        code-signing certificate that clears this warning instantly. Meanwhile, click <b>More info</b>
+        then <b>Run anyway</b>. Verify the SHA-256 checksum (above) if you want additional assurance.
+      </p>
+    </details>
+
+    <details>
+      <summary>What about the Mac version?</summary>
+      <p>
+        The Mac build is coming — the build kit exists, we just need to run it on a Mac and put it through
+        Apple's notarization process. Watch this page or sign up for a Vulu account to get notified when
+        it's out.
+      </p>
+    </details>
+
+    <details>
+      <summary>Do I need a Vulu account to use the Converter?</summary>
+      <p>
+        No. The Converter is a standalone desktop app — it runs entirely on your machine, doesn't require
+        signup, and doesn't talk to Vulu at all. A Vulu account only comes into play if you want the
+        50%-off subscriber pricing, or if you want to upload your converted MP4s to your Vulu library
+        directly (that integration is in development).
+      </p>
+    </details>
+
+    <details>
+      <summary>Which sites work?</summary>
+      <p>
+        Over a thousand out of the box — YouTube, Vimeo, TikTok, X (Twitter), Instagram, Facebook,
+        SoundCloud, Twitch, and many more via the underlying open-source
+        <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">yt-dlp</a> engine.
+        Direct MP4 or HLS stream URLs also work. If a site doesn't work out of the box, you can grab the
+        stream URL from your browser's DevTools (Network tab → filter <code>mp4</code>) and paste that
+        into the Converter instead.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is downloading videos legal?</summary>
+      <p>
+        It depends on the content and your jurisdiction. Vulu Converter is a general-purpose tool — you
+        can and should only use it to download content you own, have permission to download, or that is
+        clearly public-domain / Creative Commons. Downloading copyrighted material without permission
+        may violate the source site's Terms of Service AND applicable copyright law. That's your
+        responsibility to sort out. Vulu doesn't monitor your downloads.
+      </p>
+    </details>
+
+    <details>
+      <summary>Where are downloads saved?</summary>
+      <p>
+        By default: <code>Downloads → Vulu Converter</code> on both Windows and macOS. The folder is
+        created the first time you use the app. Each file uses the source video's title as its name.
+      </p>
+    </details>
+
+    <details>
+      <summary>How do I uninstall it?</summary>
+      <p>
+        On Windows: Settings → Apps → Vulu Converter → Uninstall. On macOS: drag Vulu Converter from
+        Applications to the Trash. Neither method touches your downloaded files — those stay put.
+      </p>
+    </details>
+
+    <details>
+      <summary>What's included with my Vulu subscription?</summary>
+      <p>
+        The subscription unlocks the Vulu streaming library, ad-free playback on any device, offline
+        access, and a discounted price on the Converter ($9.99 instead of $19.99). Subscribers on the
+        Pro tier also get the highest storage cap (75 GB / 300 videos). See
+        <a href="/pricing.html" class="link">the pricing page</a> for details.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+<!-- ================================ BUY / NOTIFY ================================ -->
+<section id="buy" style="padding: var(--space-6) 0;">
+  <div class="container" style="max-width: 640px; text-align: center;">
+    <div class="eyebrow gradient-text">Buy Vulu Converter</div>
+    <h2 style="font-size: clamp(26px, 3.5vw, 36px); margin-top: var(--space-2);">Coming soon.</h2>
+    <p style="color: rgba(255,255,255,0.72); margin-top: var(--space-3); font-size: 15px; line-height: 1.6;">
+      Checkout is under construction. Leave your email and we'll notify you the moment it's ready.
+      <br/><br/>
+      <strong>$19.99 one-time</strong> for standalone.
+      <strong style="background: linear-gradient(135deg, #4a8cff 0%, #a36bff 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">$9.99</strong> for Vulu Pro subscribers (50% off).
+    </p>
+    <form class="hero__form" id="converter-notify" onsubmit="event.preventDefault(); submitWaitlist(this);" style="margin-top: var(--space-4);">
+      <input type="email" name="email" placeholder="you@example.com" required autocomplete="email"/>
+      <button type="submit" class="btn btn--primary">Notify me when it's ready</button>
+    </form>
+    <div style="margin-top: var(--space-3); font-size: 12px; color: rgba(255,255,255,0.45);">
+      Already a Vulu Pro subscriber? Your discount applies automatically at checkout.
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FINAL CTA ================================ -->
+<section class="final-cta" style="padding: var(--space-6) 0;">
+  <div class="container" style="max-width: 700px; text-align: center;">
+    <h2 style="font-size: clamp(28px, 4vw, 40px);">Grab a link. Get an MP4.</h2>
+    <p style="color: rgba(255,255,255,0.72); margin-top: var(--space-3);">$19.99 one-time. $9.99 for Vulu Pro subscribers.</p>
+    <div style="margin-top: var(--space-4);">
+      <a class="btn btn--primary" href="#buy">Notify me when ready</a>
+      <a class="btn btn--ghost" href="/pricing.html" style="margin-left: var(--space-2);">See Vulu plans</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <a href="/" class="footer__brand"><img src="/assets/vulu-wordmark-smoothed.svg" alt="Vulu"/></a>
+        <p class="footer__tagline">Purpose-built video.</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="/features.html">Features</a></li>
+        <li><a href="/how-it-works.html">How it works</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/converter.html">Converter</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/dmca.html">DMCA</a></li>
+      </ul>
+    </div>
+    <p class="footer__legal">© 2026 Vulu LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
