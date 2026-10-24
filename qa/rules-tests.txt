@@ -1,30 +1,6 @@
-CURRENT FOLLOW-UP STATUS
-UTC: 2026-10-24T23:24:24.093749+00:00
-APP_DIR=/Users/omid/src/vulu
-REPORTS=/Users/omid/qa-reports
-PROJECT_ID=vulu-ebcd6
-
-APP_DIR does not exist. Emulator setup and tests skipped as explicitly instructed when no checkout exists. No rules were fetched from Console because there is no checkout and no authenticated Console session was accessed. No substitute rules or data-access implementation were created.
-
-Fallback live QA-vs-QA2 Firestore REST checks: BLOCKED. /Users/omid/.config/vulu/qa.env does not exist. QA/QA2 credentials were not available. No authenticated live requests or data writes performed.
-
-Requested assertions: unknown collections deny by default; A cannot read/write B users/{uid}/**; plan and role cannot be self-edited; storage users/{uid}/x and users/{other}/x are isolated. Executed assertions: 0. Expected-denial cases executed: 0. No cases counted as passes, expected failures, or successful isolation checks.
-
-The earlier empty .env.qa.example in the report repository is superseded by the external credential-file layout; no credential files were created in either repo.
-
-EARLIER AUDIT EVIDENCE (historical)
-
-FIREBASE EMULATOR AND DATA ACCESS TESTS
-UTC: 2026-10-24T23:20:32.812625+00:00
-
-Status: BLOCKED; zero emulator assertions executed. Not a passing rules assessment.
-Hosted PROJECT_ID: vulu-ebcd6 (public Firebase config).
-The supplied checkout documents Expo/Clerk/Railway/Postgres/R2, not this hosted Firebase data-access implementation.
-No firebase.json, .firebaserc, firestore.rules or storage.rules found in the source search excluding outputs/work/node_modules. firebase CLI not found on PATH. A java executable path exists; runtime version not qualified.
-
-No emulator installed or initialized: without the actual rules and data-access source, that would create substitute configuration and test an invented policy. No application code, production rules, or data was changed.
-
-Required test inputs: exact Firebase source checkout and deployed rules provenance; two emulator-auth identities; real document ownership fields and storage key construction.
-Required assertions: A may read its own document; A cannot read B existing document; unauthenticated read denied; A self-update of tier/plan/role/admin claims rejected while an allowed profile field update succeeds; A cannot write B storage path; same filename uploaded by A/B resolves to distinct owner-qualified keys; A cannot overwrite or read B object. Assert denial and nonmutation; use emulator only.
-
-Public-source candidate requiring validation (not a confirmed vulnerability): vulu-app.web.app inline code has CATEGORY_COLLECTION="Categories" and uses Videos/users. Its loadVideos logic sets owner filtering for non-launch tiers and can query Videos without owner filtering for launch tier or after a user-doc read error. Client filtering does not prove server authorization. Server rules plus two-user authenticated tests are required to determine actual exposure. No foreign documents were enumerated or read.
+PENDING — unknown collection denied
+PENDING — A reads B's users/{uid}/**: must be denied
+PENDING — A writes B's docs: must be denied
+PENDING — users/{uid}.plan self-edit: must be denied
+PENDING — users/{uid}.role self-edit: must be denied
+PENDING — storage users/{uid}/x vs users/{other}/x: must remain isolated
