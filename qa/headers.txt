@@ -1,0 +1,1441 @@
+PUBLIC HTTP CACHE/CDN AUDIT
+UTC: 2026-10-24T23:18:34.644661+00:00
+GET, redirects not followed; TLS verification on. Root + 15 guessed paths per host.
+One vantage point; headers do not establish global CDN consistency.
+
+URL: https://vulutv.com/
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:34 GMT
+X-Served-By: cache-osl6540-OSL
+X-Cache: HIT
+X-Cache-Hits: 2
+X-Timer: S1792883915.818218,VS0,VE0
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+
+URL: https://vulutv.com/signin
+Status: 200
+Connection: close
+Content-Length: 25694
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "e319e6a1102d5bc51cc382680dccf4cc90505b83794f0c62b7cf256c89bbfaaa"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:34 GMT
+X-Served-By: cache-osl6542-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.818009,VS0,VE139
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 3171bee1dbd99be4e96f5034742e893a137e6bcc6834096606701103968cb5c8
+
+URL: https://vulutv.com/signup
+Status: 200
+Connection: close
+Content-Length: 25132
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "5b12fff454f8b1a2ed7b97123df5cd2a3cc66487648c18f4aee0956f681ba6ba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:34 GMT
+X-Served-By: cache-osl6546-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.824039,VS0,VE118
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 2d0259ebc6aa3d2327e74240103a84495e51416f1a1d768bab054b9c1f16b108
+
+URL: https://vulutv.com/tv-signin
+Status: 200
+Connection: close
+Content-Length: 9486
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "b26be2928f271161a5189c7f9a10c5cf82d78b15494aa6883b51c274c8d60b00"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6540-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.818212,VS0,VE214
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e8b890d412b68483025b2bed44ad4581828186512913140ac85184543f9d2fb7
+
+URL: https://vulutv.com/converter
+Status: 200
+Connection: close
+Content-Length: 21496
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "96de7d047b9c38a5666d2595c58333cbce9552834bf2dc272d97d648a183bc2c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:34 GMT
+X-Served-By: cache-osl6537-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.818121,VS0,VE108
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 637205822f53335d19babed8a28dbfdffe2e4d04c638610ca236adda1524a6f6
+
+URL: https://vulutv.com/account
+Status: 200
+Connection: close
+Content-Length: 28399
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "bdae7f109b8ea30e5afcbdfcc461478097cc6d9891c5ea44ed6c89d1a4b63fdf"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:34 GMT
+X-Served-By: cache-osl6523-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.818202,VS0,VE170
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 11cda27ca23dbd02d5bbf03a4eff961cd0b312c22a5215b961cb53a1d52d6fbd
+
+URL: https://vulutv.com/library
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:34 GMT
+X-Served-By: cache-osl6533-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.911572,VS0,VE60
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulutv.com/save
+Status: 200
+Connection: close
+Content-Length: 19096
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6523-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.027079,VS0,VE107
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
+
+URL: https://vulutv.com/link
+Status: 200
+Connection: close
+Content-Length: 12520
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "666bf49aa9499d9279034030a6b65a696f978eedfb15de4e4aa3468092a7fe30"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6524-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.041866,VS0,VE127
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 5e8036e036abe12f7336effaef66f2b2a90f7105913456ae8c641d1dace444f4
+
+URL: https://vulutv.com/pricing
+Status: 200
+Connection: close
+Content-Length: 23609
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "fca62c3d73abe10f16720bdf2c26055192588c80acb041f68742b8b089af366a"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6542-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.052582,VS0,VE127
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: d74c12cc32ccd8906a79121ca82a351fdbb30416d404ebe1deb55af67ca459cd
+
+URL: https://vulutv.com/about
+Status: 200
+Connection: close
+Content-Length: 7688
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "7de45876d8de77e5ed77559ac13ac78caab87886a607086bbce9bd0c8622c10d"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6551-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.066650,VS0,VE108
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 1ec9f80bdbfb1ca83f23eb92eff91a87736014e0e3b8cba3c96cbfda9c87bb62
+
+URL: https://vulutv.com/privacy
+Status: 200
+Connection: close
+Content-Length: 12628
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "64c45a42d9a3dc32bc5be87025bd48ef2bba658120e6a971efe4f1d7b51fb9eb"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6540-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.084113,VS0,VE83
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e04db46a205e7107ce38d35ae30f275a8cae21b155a03ccd1d23632b6ebee123
+
+URL: https://vulutv.com/terms
+Status: 200
+Connection: close
+Content-Length: 21816
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "3f19ad8f028a69432a33979b617d869bc0de478dc27e68e5230500e91f0eabc5"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6532-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.122085,VS0,VE327
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 5bc42d0abd1472d40f39c5337ec4a6881d4610cdfffad32f9601fbb6b5d89272
+
+URL: https://vulutv.com/admin/
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6527-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.299503,VS0,VE60
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulutv.com/api/health
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6527-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.337254,VS0,VE48
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulutv.com/qa-nonexistent-check
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6533-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.337334,VS0,VE62
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://app.vulutv.com/
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6529-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792883915.352456,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+
+URL: https://app.vulutv.com/signin
+Status: 200
+Connection: close
+Content-Length: 25694
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "e319e6a1102d5bc51cc382680dccf4cc90505b83794f0c62b7cf256c89bbfaaa"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6544-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.352645,VS0,VE102
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 3171bee1dbd99be4e96f5034742e893a137e6bcc6834096606701103968cb5c8
+
+URL: https://app.vulutv.com/signup
+Status: 200
+Connection: close
+Content-Length: 25132
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "5b12fff454f8b1a2ed7b97123df5cd2a3cc66487648c18f4aee0956f681ba6ba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6536-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.454944,VS0,VE75
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 2d0259ebc6aa3d2327e74240103a84495e51416f1a1d768bab054b9c1f16b108
+
+URL: https://app.vulutv.com/tv-signin
+Status: 200
+Connection: close
+Content-Length: 9486
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "b26be2928f271161a5189c7f9a10c5cf82d78b15494aa6883b51c274c8d60b00"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6538-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.457637,VS0,VE61
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e8b890d412b68483025b2bed44ad4581828186512913140ac85184543f9d2fb7
+
+URL: https://app.vulutv.com/converter
+Status: 200
+Connection: close
+Content-Length: 21496
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "96de7d047b9c38a5666d2595c58333cbce9552834bf2dc272d97d648a183bc2c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6550-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.484201,VS0,VE105
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 637205822f53335d19babed8a28dbfdffe2e4d04c638610ca236adda1524a6f6
+
+URL: https://app.vulutv.com/account
+Status: 200
+Connection: close
+Content-Length: 28399
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "bdae7f109b8ea30e5afcbdfcc461478097cc6d9891c5ea44ed6c89d1a4b63fdf"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6528-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883915.490694,VS0,VE85
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 11cda27ca23dbd02d5bbf03a4eff961cd0b312c22a5215b961cb53a1d52d6fbd
+
+URL: https://app.vulutv.com/library
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6551-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.555415,VS0,VE52
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://app.vulutv.com/save
+Status: 200
+Connection: close
+Content-Length: 19096
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6529-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.555569,VS0,VE83
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
+
+URL: https://app.vulutv.com/link
+Status: 200
+Connection: close
+Content-Length: 12520
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "666bf49aa9499d9279034030a6b65a696f978eedfb15de4e4aa3468092a7fe30"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6541-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.612980,VS0,VE99
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 5e8036e036abe12f7336effaef66f2b2a90f7105913456ae8c641d1dace444f4
+
+URL: https://app.vulutv.com/pricing
+Status: 200
+Connection: close
+Content-Length: 23609
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "fca62c3d73abe10f16720bdf2c26055192588c80acb041f68742b8b089af366a"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6535-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.624841,VS0,VE74
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: d74c12cc32ccd8906a79121ca82a351fdbb30416d404ebe1deb55af67ca459cd
+
+URL: https://app.vulutv.com/about
+Status: 200
+Connection: close
+Content-Length: 7688
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "7de45876d8de77e5ed77559ac13ac78caab87886a607086bbce9bd0c8622c10d"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6536-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.669477,VS0,VE74
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 1ec9f80bdbfb1ca83f23eb92eff91a87736014e0e3b8cba3c96cbfda9c87bb62
+
+URL: https://app.vulutv.com/privacy
+Status: 200
+Connection: close
+Content-Length: 12628
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "64c45a42d9a3dc32bc5be87025bd48ef2bba658120e6a971efe4f1d7b51fb9eb"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6549-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.684793,VS0,VE73
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e04db46a205e7107ce38d35ae30f275a8cae21b155a03ccd1d23632b6ebee123
+
+URL: https://app.vulutv.com/terms
+Status: 200
+Connection: close
+Content-Length: 21816
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "3f19ad8f028a69432a33979b617d869bc0de478dc27e68e5230500e91f0eabc5"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6546-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.703691,VS0,VE237
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 5bc42d0abd1472d40f39c5337ec4a6881d4610cdfffad32f9601fbb6b5d89272
+
+URL: https://app.vulutv.com/admin/
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6546-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.801786,VS0,VE63
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://app.vulutv.com/api/health
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6546-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.873386,VS0,VE58
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://app.vulutv.com/qa-nonexistent-check
+Status: 404
+Connection: close
+Content-Length: 21376
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6540-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.884881,VS0,VE85
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/
+Status: 200
+Connection: close
+Content-Length: 257060
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "bae8d9a840bcbeab5e16503472ae4cfc61de10187474e6f04d763e24739b08b6"
+Last-Modified: Wed, 16 Sep 2026 16:59:47 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6544-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792883916.884820,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+
+URL: https://vulu-app.web.app/signin
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:35 GMT
+X-Served-By: cache-osl6525-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.884927,VS0,VE44
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/signup
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6533-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.966691,VS0,VE52
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/tv-signin
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6531-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.044132,VS0,VE48
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/converter
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6546-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.044137,VS0,VE45
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/account
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6551-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.044334,VS0,VE48
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/library
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6522-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.044600,VS0,VE46
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/save
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6544-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.066326,VS0,VE47
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/link
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6533-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.121758,VS0,VE45
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/pricing
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6533-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.206423,VS0,VE47
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/about
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6532-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.205860,VS0,VE45
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/privacy
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6551-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.206136,VS0,VE45
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/terms
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6523-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.208233,VS0,VE44
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/admin/
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6548-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.211435,VS0,VE182
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/api/health
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6537-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.348216,VS0,VE52
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu-app.web.app/qa-nonexistent-check
+Status: 404
+Connection: close
+Cache-Control: no-cache, must-revalidate
+Content-Type: text/html; charset=utf-8
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+X-Served-By: cache-osl6550-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792883916.404050,VS0,VE46
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+transfer-encoding: chunked
+
+Body SHA256: a5209717d04e1213c517d38211b545d82963a4880c6524eb29713b8c4972df36
+
+URL: https://vulu.dev/
+Status: 302
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+location: /admin/
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: ZRKXfmHTQZWDOqZBwUFZXw
+Transfer-Encoding: chunked
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+URL: https://vulu.dev/signin
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: xlh6tguJSNKdf53Ejq4OvQ
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/signup
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: fNVKFf7LT9yfuynr2h0iww
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/tv-signin
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: YtEdG0AIQVCpcCgqLPU1MQ
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/converter
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: ARw0C-HDSjyja_bk9I3ezw
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/account
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: 9y8Ha_5rSnOriM-f0_TJvA
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/library
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: -qUqqo_2Ski7jJMnLPU1MQ
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/save
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: HWgu22IlRPit99-LY53eZw
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/link
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: ClWyA65mQS-26mbM9o6EoQ
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/pricing
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: cTP1XcUBSRmMteOS9fVATg
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/about
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: LO1sSmX5QvWyiiwL9I3ezw
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/privacy
+Status: 200
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: public, max-age=300
+Content-Type: text/html; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: D-2aLgiLTly5XD33jq4OvQ
+Content-Length: 2963
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+vary: accept-encoding
+Connection: close
+
+Body SHA256: ac22bc14dacd74f26863288bacf9999dff09a6279ed59289312100eeb398bc44
+
+URL: https://vulu.dev/terms
+Status: 200
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: public, max-age=300
+Content-Type: text/html; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: ntUJNNwGTaORebwtlt7tkg
+Content-Length: 2279
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+vary: accept-encoding
+Connection: close
+
+Body SHA256: ec7a47fedb0961ff98de8df3be0d58b53d8e47c521eda0852f9fd1ac6f5ad4d7
+
+URL: https://vulu.dev/admin/
+Status: 200
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https://js.sentry-cdn.com https://cdn.jsdelivr.net https://*.clerk.accounts.dev https://clerk.vulu.ai; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https://*.r2.dev https://*.r2.cloudflarestorage.com https://*.vulu.ai; connect-src 'self' https://*.vulu.ai https://*.up.railway.app https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://*.clerk.accounts.dev https://clerk.vulu.ai; frame-src 'self' https://*.clerk.accounts.dev https://clerk.vulu.ai
+Content-Type: text/html; charset=utf-8
+cross-origin-opener-policy: same-origin-allow-popups
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+etag: "sha256-8r3VdveVQEtXEi3bqAltOeYB24FQSO3hqeP6wUDuNdE"
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: zqCWXxYLS1ul-XpT6WHkDg
+Content-Length: 10218
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+vary: accept-encoding
+Connection: close
+
+Body SHA256: f2bdd576f795404b57122ddba8096d39e601db815048ede1a9e3fac140ee35d1
+
+URL: https://vulu.dev/api/health
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: Sr-zmhgaRgGEscPU6WHkDg
+Content-Length: 22
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+URL: https://vulu.dev/qa-nonexistent-check
+Status: 404
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: nSFH5gIDTiyRR72J9o6EoQ
+Content-Length: 22
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: 58e46b31fc6d69e3ecdb843eeff8bac8d49c9a70cdac583c73986a8a4fb5d1b0
+
+REPEATED ROOT GETS
+URL: https://vulutv.com/
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+X-Served-By: cache-osl6547-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883917.459903,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+
+URL: https://app.vulutv.com/
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+X-Served-By: cache-osl6550-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883918.561854,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+
+URL: https://vulu-app.web.app/
+Status: 200
+Connection: close
+Content-Length: 257060
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "bae8d9a840bcbeab5e16503472ae4cfc61de10187474e6f04d763e24739b08b6"
+Last-Modified: Wed, 16 Sep 2026 16:59:47 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:18:37 GMT
+X-Served-By: cache-osl6542-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792883918.665819,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+
+URL: https://vulu.dev/
+Status: 302
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:18:38 GMT
+location: /admin/
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: tTEyWjmZRX-3rkSM2h0iww
+Transfer-Encoding: chunked
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
