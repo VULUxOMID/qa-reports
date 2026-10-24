@@ -1,0 +1,24 @@
+DEVICE LINK PUBLIC FLOW
+UTC: 2026-10-24T23:31:10.089345+00:00
+Secrets retained only in process memory, never written to report.
+Request HTTP: 200
+Displayed code length: 9
+Code length excluding separators: 8
+Observed character classes: uppercase ASCII,digits
+Alphabet: one sample cannot establish the complete generation alphabet.
+Remaining server-declared TTL seconds: 582.9 (expiry not waited for or verified)
+Valid pending poll HTTP: 200
+Poll JSON field names: ok,status
+Poll status: pending
+Email-shaped text present before approval: False
+No account approval performed.
+
+Wrong approval attempts: bounded at 5 requests, no credentials, fixed invalid code, no guessing of real codes. Authentication rejection is not proof that the code-guessing limiter was exercised.
+Attempt 1: HTTP 401; error.status=null
+Attempt 2: HTTP 401; error.status=null
+Attempt 3: HTTP 401; error.status=null
+Attempt 4: HTTP 401; error.status=null
+Attempt 5: HTTP 401; error.status=null
+429 threshold: not established within the bounded unauthenticated attempts
+
+Function inventory: 11 names observed; user requested 13. The two additional names have not been supplied and were not guessed.
