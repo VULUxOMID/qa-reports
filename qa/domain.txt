@@ -1,0 +1,1665 @@
+DOMAIN SETUP AUDIT
+UTC: 2026-10-24T23:19:21.264183+00:00
+Public resolver sample, common record types at supplied hostnames and parent web.app. Not a full zone export: DNS cannot enumerate every label or record. DMARC may inherit parent policy. Missing DS/DNSKEY at a child name is not proof DNSSEC is disabled; inspect delegating zone records and validated resolver flags.
+
+QUERY vulutv.com A
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33946
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	A
+
+;; ANSWER SECTION:
+vulutv.com.		1800	IN	A	199.36.158.100
+
+;; Query time: 121 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 55
+
+
+QUERY vulutv.com AAAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10245
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	AAAA
+
+;; AUTHORITY SECTION:
+vulutv.com.		600	IN	SOA	ns77.domaincontrol.com. dns.jomax.net. 2026080400 28800 7200 604800 600
+
+;; Query time: 121 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 110
+
+
+QUERY vulutv.com CNAME
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com CNAME
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24050
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	CNAME
+
+;; AUTHORITY SECTION:
+vulutv.com.		600	IN	SOA	ns77.domaincontrol.com. dns.jomax.net. 2026080400 28800 7200 604800 600
+
+;; Query time: 121 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 110
+
+
+QUERY vulutv.com MX
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65319
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	MX
+
+;; ANSWER SECTION:
+vulutv.com.		1800	IN	MX	10 alt3.aspmx.l.google.com.
+vulutv.com.		1800	IN	MX	10 alt4.aspmx.l.google.com.
+vulutv.com.		1800	IN	MX	5 alt1.aspmx.l.google.com.
+vulutv.com.		1800	IN	MX	5 alt2.aspmx.l.google.com.
+vulutv.com.		1800	IN	MX	1 aspmx.l.google.com.
+
+;; Query time: 121 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 157
+
+
+QUERY vulutv.com NS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6005
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	NS
+
+;; ANSWER SECTION:
+vulutv.com.		1800	IN	NS	ns77.domaincontrol.com.
+vulutv.com.		1800	IN	NS	ns78.domaincontrol.com.
+
+;; Query time: 119 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 94
+
+
+QUERY vulutv.com SOA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16754
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	SOA
+
+;; ANSWER SECTION:
+vulutv.com.		1800	IN	SOA	ns77.domaincontrol.com. dns.jomax.net. 2026080400 28800 7200 604800 600
+
+;; Query time: 121 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 110
+
+
+QUERY vulutv.com TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 6209
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	TXT
+
+;; ANSWER SECTION:
+vulutv.com.		1800	IN	TXT	"Vulu LLC"
+vulutv.com.		1800	IN	TXT	"hosting-site=vulu-ebcd6"
+vulutv.com.		1800	IN	TXT	"google-site-verification=Exf_p7U5dVUxQvaf7jB7DOTXLZ3f42eTdj2tw1uX8iw"
+vulutv.com.		1800	IN	TXT	"v=spf1 include:dc-aa8e722993._spfm.vulutv.com ~all"
+
+;; Query time: 38 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 240
+
+
+QUERY vulutv.com CAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com CAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18558
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	CAA
+
+;; AUTHORITY SECTION:
+vulutv.com.		600	IN	SOA	ns77.domaincontrol.com. dns.jomax.net. 2026080400 28800 7200 604800 600
+
+;; Query time: 38 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 110
+
+
+QUERY vulutv.com DS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com DS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40609
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 6, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	DS
+
+;; AUTHORITY SECTION:
+com.			900	IN	SOA	a.gtld-servers.net. nstld.verisign-grs.com. 1792883941 1800 900 604800 900
+com.			900	IN	RRSIG	SOA 13 1 900 20261031231901 20261024220901 65344 com. bJnhrWW88/nue/EW9Lu8zBKmFeDfza0qIA+Xn32FAlbVjcadJ9rK9mP2 AHEnc13wKqQYE+Ln3njEB6ocwW57Hg==
+CK0POJMG874LJREF7EFN8430QVIT8BSM.com. 900 IN RRSIG NSEC3 13 2 900 20261029002612 20261021231612 65344 com. NnMF+EXBvze1sTUUpWaQAB2Rrr4Yp3JX/GXInoFWLcHsoLanOpO+kLn+ 8aa52LeZmF+1rGiPUITGSGY3VFlz/Q==
+CK0POJMG874LJREF7EFN8430QVIT8BSM.com. 900 IN NSEC3 1 1 0 - CK0Q35HRS4H76G6CHNB9414CJN6S5UPL  NS SOA RRSIG DNSKEY NSEC3PARAM
+LQ7SPQDGRV2JS5AMNVIQMU6EBNTGBAD3.com. 900 IN RRSIG NSEC3 13 2 900 20261030002350 20261022231350 65344 com. s3szz+6su2/pwQFEkqlO+0NM9Oe6VFTFJBIQnSXJPFCr12mKSgiW5hjg D3l+GuaFDaM4yPlLS2bZEb5c3y6fJg==
+LQ7SPQDGRV2JS5AMNVIQMU6EBNTGBAD3.com. 900 IN NSEC3 1 1 0 - LQ7T1NAASABOLASKI2T5DEJNVSNIC7CE  NS DS RRSIG
+
+;; Query time: 6 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 571
+
+
+QUERY vulutv.com DNSKEY
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulutv.com DNSKEY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 16176
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulutv.com.			IN	DNSKEY
+
+;; AUTHORITY SECTION:
+vulutv.com.		600	IN	SOA	ns77.domaincontrol.com. dns.jomax.net. 2026080400 28800 7200 604800 600
+
+;; Query time: 37 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 110
+
+
+QUERY app.vulutv.com A
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 24420
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	A
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+vulu-ebcd6.web.app.	1800	IN	A	199.36.158.100
+
+;; Query time: 73 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 91
+
+
+QUERY app.vulutv.com AAAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 11426
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	AAAA
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+vulu-ebcd6.web.app.	1800	IN	AAAA	2620:0:890::100
+
+;; Query time: 72 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 103
+
+
+QUERY app.vulutv.com CNAME
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com CNAME
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 28021
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	CNAME
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; Query time: 37 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 75
+
+
+QUERY app.vulutv.com MX
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 20826
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	MX
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 39 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY app.vulutv.com NS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35555
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	NS
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 38 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY app.vulutv.com SOA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 19581
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	SOA
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 39 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY app.vulutv.com TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5954
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	TXT
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 37 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY app.vulutv.com CAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com CAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53291
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	CAA
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 38 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY app.vulutv.com DS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com DS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57500
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	DS
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY app.vulutv.com DNSKEY
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec app.vulutv.com DNSKEY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44381
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;app.vulutv.com.			IN	DNSKEY
+
+;; ANSWER SECTION:
+app.vulutv.com.		1800	IN	CNAME	vulu-ebcd6.web.app.
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 35 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 163
+
+
+QUERY vulu-app.web.app A
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40234
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	A
+
+;; ANSWER SECTION:
+vulu-app.web.app.	1800	IN	A	199.36.158.100
+
+;; Query time: 35 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 61
+
+
+QUERY vulu-app.web.app AAAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56412
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	AAAA
+
+;; ANSWER SECTION:
+vulu-app.web.app.	1800	IN	AAAA	2620:0:890::100
+
+;; Query time: 34 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 73
+
+
+QUERY vulu-app.web.app CNAME
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app CNAME
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 25592
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	CNAME
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app MX
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33232
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	MX
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 37 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app NS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12477
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	NS
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 39 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app SOA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52933
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	SOA
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 39418
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	TXT
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app CAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app CAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 11768
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	CAA
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app DS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app DS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58814
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	DS
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 38 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu-app.web.app DNSKEY
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu-app.web.app DNSKEY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 48771
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu-app.web.app.		IN	DNSKEY
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 34 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 133
+
+
+QUERY vulu.dev A
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 800
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	A
+
+;; ANSWER SECTION:
+vulu.dev.		15	IN	A	69.46.46.93
+
+;; Query time: 96 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 53
+
+
+QUERY vulu.dev AAAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8368
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	AAAA
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 95 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY vulu.dev CNAME
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev CNAME
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 8080
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	CNAME
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 91 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY vulu.dev MX
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54416
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	MX
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 90 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY vulu.dev NS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 43248
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	NS
+
+;; ANSWER SECTION:
+vulu.dev.		300	IN	NS	ns3gnv.name.com.
+vulu.dev.		300	IN	NS	ns1kpv.name.com.
+vulu.dev.		300	IN	NS	ns2cvx.name.com.
+vulu.dev.		300	IN	NS	ns4fpy.name.com.
+
+;; Query time: 76 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 129
+
+
+QUERY vulu.dev SOA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27378
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	SOA
+
+;; ANSWER SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 57 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY vulu.dev TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4996
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	TXT
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 33 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY vulu.dev CAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev CAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33962
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	CAA
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 34 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY vulu.dev DS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev DS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35553
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 4, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	DS
+
+;; AUTHORITY SECTION:
+dev.			300	IN	SOA	ns-tld1.charlestonroadregistry.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+dev.			300	IN	RRSIG	SOA 8 1 21600 20261113085939 20261022085939 59746 dev. uH/TRBRi4ZwWV+ny8nMOmvd7WNw4u0E3SdXXsVahU3zNIIZXIMOnGVGH GpDJk6dl5uyArPCNED4WjF7oeq2k2FEc3Ig1cBwnLS7zfmp1HrnUbwU6 7Nvx6PKCYdyUbSTS0Ty/Y6XB/5qwwUgss5s8qsUxRyuAGKfzbLxm9pjh 7Qc=
+o6j0fc46vsetacdma8au95u5tlfr0sam.dev. 300 IN RRSIG NSEC3 8 2 300 20261113085939 20261022085939 59746 dev. NNOkbYs47lZoNwSjl0VflSkJ9NoUvKnvWvXrYJGVVQlqJWOM9qIWqiwT VJLMcTX2n4fGfK0fw+JdQfC513tIoVLpQg/UK3k1RIXIqKfDS9ZgS1uv feZe4dUR82uM2MvwlIAhFWqXFv3qPhdd+HBPo+u0klyFpAjxBWQw/uKb 5WA=
+o6j0fc46vsetacdma8au95u5tlfr0sam.dev. 300 IN NSEC3 1 0 1 B7B0891083980E59 O6J1EHFI6MAD6LO51UFRTPC3271LUAH9  NS
+
+;; Query time: 5 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 546
+
+
+QUERY vulu.dev DNSKEY
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec vulu.dev DNSKEY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44053
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;vulu.dev.			IN	DNSKEY
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 31 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 105
+
+
+QUERY _dmarc.vulutv.com TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec _dmarc.vulutv.com TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 28956
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;_dmarc.vulutv.com.		IN	TXT
+
+;; ANSWER SECTION:
+_dmarc.vulutv.com.	1800	IN	TXT	"v=DMARC1; p=quarantine; adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;"
+
+;; Query time: 37 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 140
+
+
+QUERY _dmarc.app.vulutv.com TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec _dmarc.app.vulutv.com TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 51955
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;_dmarc.app.vulutv.com.		IN	TXT
+
+;; AUTHORITY SECTION:
+vulutv.com.		600	IN	SOA	ns77.domaincontrol.com. dns.jomax.net. 2026080400 28800 7200 604800 600
+
+;; Query time: 70 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 131
+
+
+QUERY _dmarc.vulu-app.web.app TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec _dmarc.vulu-app.web.app TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 29783
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;_dmarc.vulu-app.web.app.	IN	TXT
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 65 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 147
+
+
+QUERY _dmarc.vulu.dev TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec _dmarc.vulu.dev TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 7857
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;_dmarc.vulu.dev.		IN	TXT
+
+;; AUTHORITY SECTION:
+vulu.dev.		1800	IN	SOA	ns1.name.com. hostmaster.nsone.net. 1783639573 43200 7200 1209600 3600
+
+;; Query time: 33 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 112
+
+
+QUERY web.app A
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 23909
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	A
+
+;; ANSWER SECTION:
+web.app.		1800	IN	A	199.36.158.100
+
+;; Query time: 35 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 52
+
+
+QUERY web.app AAAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 7451
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	AAAA
+
+;; ANSWER SECTION:
+web.app.		1800	IN	AAAA	2620:0:890::100
+
+;; Query time: 35 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 64
+
+
+QUERY web.app CNAME
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app CNAME
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4925
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	CNAME
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 35 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 124
+
+
+QUERY web.app MX
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app MX
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 61725
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	MX
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 124
+
+
+QUERY web.app NS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33183
+;; flags: qr rd ra; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	NS
+
+;; ANSWER SECTION:
+web.app.		1676	IN	NS	ns2.googledomains.com.
+web.app.		1676	IN	NS	ns1.googledomains.com.
+web.app.		1676	IN	NS	ns3.googledomains.com.
+web.app.		1676	IN	NS	ns4.googledomains.com.
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 125
+
+
+QUERY web.app SOA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 38348
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	SOA
+
+;; ANSWER SECTION:
+web.app.		1800	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 36 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 124
+
+
+QUERY web.app TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49360
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	TXT
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 34 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 124
+
+
+QUERY web.app CAA
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app CAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 59942
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	CAA
+
+;; ANSWER SECTION:
+web.app.		1800	IN	CAA	0 issue "pki.goog"
+
+;; Query time: 35 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 63
+
+
+QUERY web.app DS
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app DS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 49007
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 4, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	DS
+
+;; AUTHORITY SECTION:
+app.			434	IN	SOA	ns-tld1.charlestonroadregistry.com. cloud-dns-hostmaster.google.com. 101427 21600 3600 259200 900
+app.			434	IN	RRSIG	SOA 8 1 21600 20261113095023 20261022095023 15726 app. udHDLokzZ0hVnjf6+PCRT0FnUoNSbdjQLx+H+Fk08SO7u3NI91IFklNQ ohxIFyGAHjzeNDeMChu17jaUFb0rpIK/TtiNTG7Q+GPTAZzrzdgiP/th QhTFDTxI50BJJRo6He9pHuq0eZ2k4ZY0x79VudHCDD/RcpB9ZPr7RjyC sn0=
+81bpnfccrq3gpjqunfqedm4qv3326e14.app. 434 IN RRSIG NSEC3 8 2 900 20261113095023 20261022095023 15726 app. F5ewW98VNkYXap1C5AJEJEa+lbf9FqUQYWDCLwtK0v3Q7IzHsJN1jkQ4 GbvvNuqa2dyFzPphcvM7z1ez0/N3bBp/yTuvWC4BLJwGR4+SXRTAOSSB QkC1z3nKpdr1DD8vlpYwNC485OwrnU9YlXkZih0eTysQdltjWm7oSh0C MbQ=
+81bpnfccrq3gpjqunfqedm4qv3326e14.app. 434 IN NSEC3 1 0 1 139FCA6C02909936 81BQMJTKDFDTS5KUCLC79NTU69MUEQBS  NS
+
+;; Query time: 4 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 545
+
+
+QUERY web.app DNSKEY
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec web.app DNSKEY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51815
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;web.app.			IN	DNSKEY
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 37 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 124
+
+
+QUERY _dmarc.web.app TXT
+
+; <<>> DiG 9.10.6 <<>> +time=2 +tries=1 +dnssec _dmarc.web.app TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53949
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 1232
+;; QUESTION SECTION:
+;_dmarc.web.app.			IN	TXT
+
+;; AUTHORITY SECTION:
+web.app.		300	IN	SOA	ns1.googledomains.com. cloud-dns-hostmaster.google.com. 1 21600 3600 259200 300
+
+;; Query time: 117 msec
+;; SERVER: 192.168.0.1#53(192.168.0.1)
+;; WHEN: Sun Oct 25 01:19:21 CEST 2026
+;; MSG SIZE  rcvd: 131
+
+
+RDAP vulutv.com
+URL: https://rdap.verisign.com/com/v1/domain/vulutv.com
+Status: 200
+Content-Length: 2633
+Content-Type: application/rdap+json
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=15768000; includeSubDomains; preload
+
+Body SHA256: 49b5facf30fd82b03a97a692a6d6529c9af130f80ec76d3d80418ea8e79838a8
+{
+  "ldhName": "VULUTV.COM",
+  "status": [
+    "client delete prohibited",
+    "client renew prohibited",
+    "client transfer prohibited",
+    "client update prohibited"
+  ],
+  "events": [
+    {
+      "eventAction": "registration",
+      "eventDate": "2026-04-23T03:47:03Z"
+    },
+    {
+      "eventAction": "expiration",
+      "eventDate": "2027-04-23T03:47:03Z"
+    },
+    {
+      "eventAction": "last changed",
+      "eventDate": "2026-04-23T03:47:03Z"
+    },
+    {
+      "eventAction": "last update of RDAP database",
+      "eventDate": "2026-10-24T23:19:09Z"
+    }
+  ],
+  "secureDNS": {
+    "delegationSigned": false
+  },
+  "nameservers": [
+    {
+      "objectClassName": "nameserver",
+      "ldhName": "NS77.DOMAINCONTROL.COM"
+    },
+    {
+      "objectClassName": "nameserver",
+      "ldhName": "NS78.DOMAINCONTROL.COM"
+    }
+  ],
+  "port43": null
+}
+
+RDAP vulu.dev
+URL: https://pubapi.registry.google/rdap/domain/vulu.dev
+Status: 200
+server: Jetty(12.1.14)
+date: Sat, 24 Oct 2026 23:19:22 GMT
+vary: Accept-Encoding
+content-security-policy: default-src 'self'; object-src 'none'; base-uri 'self';
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-type: application/rdap+json; charset=utf-8
+access-control-allow-origin: *
+Content-Length: 6655
+set-cookie: [REDACTED]
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+Connection: close
+
+Body SHA256: 8baa146a0c08337e382cb799b87775e6358934f79d6eb9dd2f145db81a979612
+{
+  "ldhName": "vulu.dev",
+  "status": [
+    "client transfer prohibited"
+  ],
+  "events": [
+    {
+      "eventAction": "registration",
+      "eventActor": "name",
+      "eventDate": "2026-07-09T23:26:12.573Z"
+    },
+    {
+      "eventAction": "expiration",
+      "eventDate": "2027-07-09T23:26:12.573Z"
+    },
+    {
+      "eventAction": "last update of RDAP database",
+      "eventDate": "2026-10-24T23:19:22.841Z"
+    },
+    {
+      "eventAction": "last changed",
+      "eventDate": "2026-07-14T23:26:12.573Z"
+    }
+  ],
+  "secureDNS": {
+    "delegationSigned": false,
+    "zoneSigned": true
+  },
+  "nameservers": [
+    {
+      "objectClassName": "nameserver",
+      "handle": "E6B698_SOY-GOOGLE",
+      "ldhName": "ns1kpv.name.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns1kpv.name.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/vulu.dev"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    },
+    {
+      "objectClassName": "nameserver",
+      "handle": "251DF47_SOY-GOOGLE",
+      "ldhName": "ns2cvx.name.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns2cvx.name.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/vulu.dev"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    },
+    {
+      "objectClassName": "nameserver",
+      "handle": "18C4551_SOY-GOOGLE",
+      "ldhName": "ns3gnv.name.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns3gnv.name.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/vulu.dev"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    },
+    {
+      "objectClassName": "nameserver",
+      "handle": "10625A2_SOY-GOOGLE",
+      "ldhName": "ns4fpy.name.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns4fpy.name.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/vulu.dev"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    }
+  ],
+  "port43": null
+}
+
+RDAP web.app
+URL: https://pubapi.registry.google/rdap/domain/web.app
+Status: 200
+server: Jetty(12.1.14)
+date: Sat, 24 Oct 2026 23:19:23 GMT
+vary: Accept-Encoding
+content-security-policy: default-src 'self'; object-src 'none'; base-uri 'self';
+x-content-type-options: nosniff
+x-frame-options: DENY
+content-type: application/rdap+json; charset=utf-8
+access-control-allow-origin: *
+Content-Length: 6792
+set-cookie: [REDACTED]
+via: 1.1 google
+Alt-Svc: h3=":443"; ma=2592000
+Connection: close
+
+Body SHA256: cd99dedf8c6c0e5710bde022507bb73eae5b9158e89f29e3a909f39538cd4675
+{
+  "ldhName": "web.app",
+  "status": [
+    "client delete prohibited",
+    "client transfer prohibited",
+    "client update prohibited"
+  ],
+  "events": [
+    {
+      "eventAction": "registration",
+      "eventActor": "markmonitor",
+      "eventDate": "2019-01-08T22:05:04.716Z"
+    },
+    {
+      "eventAction": "expiration",
+      "eventDate": "2027-01-08T22:05:04.716Z"
+    },
+    {
+      "eventAction": "last update of RDAP database",
+      "eventDate": "2026-10-24T23:19:23.368Z"
+    },
+    {
+      "eventAction": "last changed",
+      "eventDate": "2025-12-12T10:38:29.753Z"
+    }
+  ],
+  "secureDNS": {
+    "delegationSigned": false,
+    "zoneSigned": true
+  },
+  "nameservers": [
+    {
+      "objectClassName": "nameserver",
+      "handle": "5217A1_SOY-GOOGLE",
+      "ldhName": "ns1.googledomains.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns1.googledomains.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/web.app"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    },
+    {
+      "objectClassName": "nameserver",
+      "handle": "378AC2_SOY-GOOGLE",
+      "ldhName": "ns2.googledomains.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns2.googledomains.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/web.app"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    },
+    {
+      "objectClassName": "nameserver",
+      "handle": "5217A2_SOY-GOOGLE",
+      "ldhName": "ns3.googledomains.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns3.googledomains.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/web.app"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    },
+    {
+      "objectClassName": "nameserver",
+      "handle": "162012_SOY-GOOGLE",
+      "ldhName": "ns4.googledomains.com",
+      "links": [
+        {
+          "href": "https://pubapi.registry.google/rdap/nameserver/ns4.googledomains.com",
+          "rel": "self",
+          "type": "application/rdap+json",
+          "value": "https://pubapi.registry.google/rdap/domain/web.app"
+        }
+      ],
+      "remarks": [
+        {
+          "description": [
+            "Summary data only. For complete data, send a specific query for the object."
+          ],
+          "title": "Incomplete Data",
+          "type": "object truncated due to unexplainable reasons"
+        }
+      ]
+    }
+  ],
+  "port43": null
+}
+
+CERTIFICATE TRANSPARENCY vulutv.com
+URL: https://crt.sh/?q=%25.vulutv.com&output=json
+Status: 200
+Server: nginx
+Date: Sat, 24 Oct 2026 23:19:36 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: close
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=15768000; includeSubDomains; preload
+Expect-CT: preload
+
+Body SHA256: bc9d6f553710e17eaed27102a265aa85ee4e46fadc50901ee743cef21fe915d6
+*.vulutv.com
+app.vulutv.com
+cpanel.demo.vulutv.com
+cpanel.vulutv.com
+cpcalendars.demo.vulutv.com
+cpcalendars.vulutv.com
+cpcontacts.demo.vulutv.com
+cpcontacts.vulutv.com
+demo.vulutv.com
+mail.demo.vulutv.com
+mail.vulutv.com
+pay.vulutv.com
+sitemap.vulutv.com
+sitemaps.vulutv.com
+vulutv.com
+webdisk.demo.vulutv.com
+webdisk.vulutv.com
+webmail.demo.vulutv.com
+webmail.vulutv.com
+wpt.vulutv.com
+www.demo.vulutv.com
+www.pay.vulutv.com
+www.vulutv.com
+www.wpt.vulutv.com
+Historical certificate names only; ownership, active DNS and complete enumeration are not established.
+
+CERTIFICATE TRANSPARENCY vulu.dev
+URL: https://crt.sh/?q=%25.vulu.dev&output=json
+Status: 200
+Server: nginx
+Date: Sat, 24 Oct 2026 23:19:38 GMT
+Content-Type: application/json
+Content-Length: 3740
+Connection: close
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=15768000; includeSubDomains; preload
+Expect-CT: preload
+
+Body SHA256: d03136ddad4bda0bcace6ccfa73d4296376714487fab2e3dbcd8ae17746a4e14
+accounts.vulu.dev
+clerk.vulu.dev
+vulu.dev
+Historical certificate names only; ownership, active DNS and complete enumeration are not established.
+
+CERTIFICATE TRANSPARENCY vulu-app.web.app
+URL: https://crt.sh/?q=%25.vulu-app.web.app&output=json
+Status: 200
+Server: nginx
+Date: Sat, 24 Oct 2026 23:19:38 GMT
+Content-Type: application/json
+Content-Length: 2
+Connection: close
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=15768000; includeSubDomains; preload
+Expect-CT: preload
+
+Body SHA256: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945
+
+Historical certificate names only; ownership, active DNS and complete enumeration are not established.
