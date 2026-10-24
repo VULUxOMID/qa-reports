@@ -1,0 +1,5 @@
+AUTH HANDOFF REPLAY
+UTC: 2026-10-24T23:31:10.089345+00:00
+getAuthHandoffToken unauthenticated POST {} HTTP: 401
+error.status: null
+Replay status: NOT RUN. No legitimate ID token or handoff custom token is available in this public-only scope. No token was forged, no account created and no authenticated token exchange performed. The second-use result cannot be established. Public code consumes the issued token with Firebase signInWithCustomToken; requesting a handoff and consuming one are distinct operations.
