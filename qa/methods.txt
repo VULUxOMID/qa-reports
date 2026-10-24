@@ -1,0 +1,19 @@
+PUBLIC FUNCTION METHOD AND CONTENT-TYPE MATRIX
+UTC: 2026-10-24T23:38:40.374840+00:00
+No credentials. Non-GET methods send {}. Secret-bearing success bodies redacted rather than exposed. A trailing slash is tested with POST JSON. text/plain POST {} has no custom request headers requiring preflight.
+
+pollDeviceLink	GET	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+pollDeviceLink	PUT	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+pollDeviceLink	DELETE	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+pollDeviceLink	trailing slash POST	HTTP 400	First 100 bytes: b'{"ok":false,"error":"missing_device_id"}'
+pollDeviceLink	simple text/plain POST	HTTP 400	First 100 bytes: b'{"ok":false,"error":"missing_device_id"}'
+requestDeviceLinkCode	GET	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+requestDeviceLinkCode	PUT	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+requestDeviceLinkCode	DELETE	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+requestDeviceLinkCode	trailing slash POST	HTTP 200	REDACTED JSON (not raw first 100 bytes): {"ok":true,"deviceId":"[REDACTED]","code":"[REDACTED]","claimSecret":"[REDACTED]","expiresAt":1792885722921}
+requestDeviceLinkCode	simple text/plain POST	HTTP 200	REDACTED JSON (not raw first 100 bytes): {"ok":true,"deviceId":"[REDACTED]","code":"[REDACTED]","claimSecret":"[REDACTED]","expiresAt":1792885723442}
+sendPasswordResetEmail	GET	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+sendPasswordResetEmail	PUT	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+sendPasswordResetEmail	DELETE	HTTP 405	First 100 bytes: b'{"ok":false,"error":"method_not_allowed"}'
+sendPasswordResetEmail	trailing slash POST	HTTP 200	First 100 bytes: b'{"ok":true}'
+sendPasswordResetEmail	simple text/plain POST	HTTP 200	First 100 bytes: b'{"ok":true}'
