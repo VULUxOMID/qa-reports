@@ -1,3 +1,11 @@
+CURRENT FOLLOW-UP STATUS
+UTC: 2026-10-24T23:24:24.093749+00:00
+Credential source=/Users/omid/.config/vulu/qa.env (absent)
+Step 10: SKIPPED: no staff account
+No STAFF credentials available and no authenticated staff requests attempted. Earlier unauthenticated HTTP observations below remain the only admin runtime evidence.
+
+EARLIER AUDIT EVIDENCE (historical)
+
 ADMIN AND VULU.DEV SMOKE
 UTC: 2026-10-24T23:20:32.812625+00:00
 
