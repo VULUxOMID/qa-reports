@@ -1,0 +1,14 @@
+FIREBASE EMULATOR AND DATA ACCESS TESTS
+UTC: 2026-10-24T23:20:32.812625+00:00
+
+Status: BLOCKED; zero emulator assertions executed. Not a passing rules assessment.
+Hosted PROJECT_ID: vulu-ebcd6 (public Firebase config).
+The supplied checkout documents Expo/Clerk/Railway/Postgres/R2, not this hosted Firebase data-access implementation.
+No firebase.json, .firebaserc, firestore.rules or storage.rules found in the source search excluding outputs/work/node_modules. firebase CLI not found on PATH. A java executable path exists; runtime version not qualified.
+
+No emulator installed or initialized: without the actual rules and data-access source, that would create substitute configuration and test an invented policy. No application code, production rules, or data was changed.
+
+Required test inputs: exact Firebase source checkout and deployed rules provenance; two emulator-auth identities; real document ownership fields and storage key construction.
+Required assertions: A may read its own document; A cannot read B existing document; unauthenticated read denied; A self-update of tier/plan/role/admin claims rejected while an allowed profile field update succeeds; A cannot write B storage path; same filename uploaded by A/B resolves to distinct owner-qualified keys; A cannot overwrite or read B object. Assert denial and nonmutation; use emulator only.
+
+Public-source candidate requiring validation (not a confirmed vulnerability): vulu-app.web.app inline code has CATEGORY_COLLECTION="Categories" and uses Videos/users. Its loadVideos logic sets owner filtering for non-launch tiers and can query Videos without owner filtering for launch tier or after a user-doc read error. Client filtering does not prove server authorization. Server rules plus two-user authenticated tests are required to determine actual exposure. No foreign documents were enumerated or read.
