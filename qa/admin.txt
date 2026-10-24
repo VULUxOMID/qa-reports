@@ -77,3 +77,7 @@ headers replace: baseline[848:850]=b'xQ'; variant[846:850]=b'3ezw'
 body: baseline bytes=90, variant bytes=90, equal=True
 Body: {"error":"Missing bearer token.","message":"Missing bearer token.","code":"missing_token"}
 
+
+USER-REQUESTED DISPOSITION
+Bearer authentication / no session cookies / ACAO wildcard / x-vulu-admin-csrf: RESOLVED, NO ACTION for this report. Observed evidence is unauthenticated 401, absent Set-Cookie and ACAO *. No authenticated CSRF behavior was tested; the header being vestigial is a user assessment, not source-verified.
+x-vulu-admin-environment: OPEN. The unauthenticated variants were identical; authenticated behavior is untested.
