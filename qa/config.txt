@@ -1565,3 +1565,16 @@ indexId
 name
 targetId
 userId
+
+
+ACCOUNT COMMENT AND CONCATENATED FUNCTION URL FOLLOW-UP
+Source: https://app.vulutv.com/account
+// Functions: generateExtensionToken, listExtensionTokens, revokeExtensionToken.
+TOKEN_FUNCTIONS_BASE=https://us-central1-vulu-ebcd6.cloudfunctions.net
+Resolved public function URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/generateExtensionToken
+Resolved public function URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/listExtensionTokens
+Resolved public function URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/revokeExtensionToken
+Source: https://app.vulutv.com/link
+approveDeviceLink confirmed; already included in function probes.
+Source: https://app.vulutv.com/reset-password
+sendPasswordResetEmail confirmed; already included in function probes.
