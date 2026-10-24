@@ -1,3 +1,16 @@
+CURRENT FOLLOW-UP STATUS
+UTC: 2026-10-24T23:24:24.093749+00:00
+APP_DIR=/Users/omid/src/vulu (absent)
+REPORTS=/Users/omid/qa-reports
+Credential source=/Users/omid/.config/vulu/qa.env (absent)
+PROJECT_ID=vulu-ebcd6
+
+QA is the attacker and QA2 is the controlled victim. Neither account credential is available. Authenticated capture/library results, account/library snapshots, token claims and direct foreign-document Firestore REST denial remain NOT RUN. No foreign document IDs were enumerated and no live data writes were attempted. Missing credentials prevent the requested live fallback when the source checkout is absent.
+
+The prior 24-row CORS matrix already uses vulu-ebcd6 and is unchanged.
+
+EARLIER AUDIT EVIDENCE (historical)
+
 URL COVERAGE AND AUTHENTICATED QA STATUS
 UTC: 2026-10-24T23:20:32.812625+00:00
 
