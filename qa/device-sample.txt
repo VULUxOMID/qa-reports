@@ -1,0 +1,111 @@
+DEVICE CODE SAMPLE AND OBSERVED TTL
+UTC: 2026-10-24T23:39:19.526285+00:00
+State: IN PROGRESS: waiting for declared expiry
+Exactly 25 generation attempts. Identifiers, claim secrets and full codes remain only in process memory. No approval or sign-in.
+Generation HTTP counts: {"200": 25}
+Usable samples: 25
+Normalized lengths: {"8": 25}
+Displayed lengths: {"9": 25}
+Observed distinct characters: 23456789ABCDEFGHJKMNPQRSTUVWXYZ
+Duplicate normalized codes: 0
+Alphabet/keyspace caution: this sample shows observed characters only. It does not prove the complete allowed alphabet, uniformity, entropy or unpredictability.
+
+Sample 1: declared remaining TTL at issuance=599.76 seconds
+{"label":"initial","http":200,"ageStart":23.616,"ageEnd":24.349,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 2: declared remaining TTL at issuance=599.69 seconds
+{"label":"initial","http":200,"ageStart":23.422,"ageEnd":24.407,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 3: declared remaining TTL at issuance=599.743 seconds
+{"label":"initial","http":200,"ageStart":23.462,"ageEnd":24.275,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 4: declared remaining TTL at issuance=599.793 seconds
+{"label":"initial","http":200,"ageStart":23.425,"ageEnd":24.154,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 5: declared remaining TTL at issuance=599.734 seconds
+{"label":"initial","http":200,"ageStart":23.207,"ageEnd":24.062,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 6: declared remaining TTL at issuance=599.806 seconds
+{"label":"initial","http":200,"ageStart":23.063,"ageEnd":23.9,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 7: declared remaining TTL at issuance=599.82 seconds
+{"label":"initial","http":200,"ageStart":23.007,"ageEnd":23.766,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 8: declared remaining TTL at issuance=599.719 seconds
+{"label":"initial","http":200,"ageStart":22.86,"ageEnd":23.671,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 9: declared remaining TTL at issuance=599.814 seconds
+{"label":"initial","http":200,"ageStart":22.825,"ageEnd":23.594,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 10: declared remaining TTL at issuance=599.815 seconds
+{"label":"initial","http":200,"ageStart":22.844,"ageEnd":23.547,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 11: declared remaining TTL at issuance=599.826 seconds
+{"label":"initial","http":200,"ageStart":22.729,"ageEnd":23.486,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 12: declared remaining TTL at issuance=599.827 seconds
+{"label":"initial","http":200,"ageStart":22.591,"ageEnd":23.35,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 13: declared remaining TTL at issuance=599.828 seconds
+{"label":"initial","http":200,"ageStart":22.534,"ageEnd":23.198,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 14: declared remaining TTL at issuance=599.793 seconds
+{"label":"initial","http":200,"ageStart":22.432,"ageEnd":23.228,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 15: declared remaining TTL at issuance=599.818 seconds
+{"label":"initial","http":200,"ageStart":22.464,"ageEnd":23.146,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 16: declared remaining TTL at issuance=599.738 seconds
+{"label":"initial","http":200,"ageStart":22.254,"ageEnd":23.083,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 17: declared remaining TTL at issuance=599.813 seconds
+{"label":"initial","http":200,"ageStart":22.092,"ageEnd":22.928,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 18: declared remaining TTL at issuance=599.808 seconds
+{"label":"initial","http":200,"ageStart":22.08,"ageEnd":22.762,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 19: declared remaining TTL at issuance=599.818 seconds
+{"label":"initial","http":200,"ageStart":22.002,"ageEnd":22.668,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 20: declared remaining TTL at issuance=599.815 seconds
+{"label":"initial","http":200,"ageStart":21.915,"ageEnd":22.615,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 21: declared remaining TTL at issuance=599.826 seconds
+{"label":"initial","http":200,"ageStart":21.819,"ageEnd":22.545,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 22: declared remaining TTL at issuance=599.826 seconds
+{"label":"initial","http":200,"ageStart":21.761,"ageEnd":22.488,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 23: declared remaining TTL at issuance=599.796 seconds
+{"label":"initial","http":200,"ageStart":21.73,"ageEnd":22.428,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 24: declared remaining TTL at issuance=599.806 seconds
+{"label":"initial","http":200,"ageStart":21.644,"ageEnd":22.333,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
+
+Sample 25: declared remaining TTL at issuance=599.811 seconds
+{"label":"initial","http":200,"ageStart":21.498,"ageEnd":22.259,"response":{"ok":true,"status":"pending"}}
+Observed TTL bound: expiry is only bracketed by the last pending response and first expired response; HTTP errors/rate limiting are not treated as expiry.
