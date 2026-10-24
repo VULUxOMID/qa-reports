@@ -1,164 +1,371 @@
-CURRENT FOLLOW-UP STATUS
-UTC: 2026-10-24T23:24:24.093749+00:00
-APP_DIR=/Users/omid/src/vulu (absent)
-REPORTS=/Users/omid/qa-reports
-Credential source=/Users/omid/.config/vulu/qa.env (absent)
-PROJECT_ID=vulu-ebcd6
+ROUTE-DERIVED URL COVERAGE
+UTC: 2026-10-24T23:27:30.786172+00:00
+Sources: public app.vulutv.com page HTML, its script src bundles, and vulu.dev admin HTML/bundles documented in config.txt.
+GET only; redirects not followed in this inventory. A 200 HTML response is route delivery, not capture acceptance, CORS compatibility, authentication, or library persistence.
 
-QA is the attacker and QA2 is the controlled victim. Neither account credential is available. Authenticated capture/library results, account/library snapshots, token claims and direct foreign-document Firestore REST denial remain NOT RUN. No foreign document IDs were enumerated and no live data writes were attempted. Missing credentials prevent the requested live fallback when the source checkout is absent.
+Credentials file ~/.config/vulu/qa.env remains unavailable. No authenticated account/library snapshot, token claims, A-vs-B REST check or capture/library result. URL edge-case capture and long redirect chain tests remain NOT RUN. Earlier /save query-delivery checks did not test backend acceptance.
 
-The prior 24-row CORS matrix already uses vulu-ebcd6 and is unchanged.
-
-EARLIER AUDIT EVIDENCE (historical)
-
-URL COVERAGE AND AUTHENTICATED QA STATUS
-UTC: 2026-10-24T23:20:32.812625+00:00
-
-Step 7: PARTIAL, NOT ACCEPTED AS PASS.
-.env.qa is missing in the supplied repo. No QA_EMAIL/QA_PASSWORD available.
-The following requests test only GET /save?url= route delivery. They do not submit the capture form, execute JS, or demonstrate a backend fetch or library insertion. No authenticated library observation was possible.
-
-Case: localhost
-Input URL: http://localhost:9/
-URL: https://app.vulutv.com/save?url=http%3A%2F%2Flocalhost%3A9%2F
+URL: https://app.vulutv.com
 Status: 200
 Connection: close
-Content-Length: 19096
+Content-Length: 21130
 Cache-Control: max-age=3600
 Content-Type: text/html; charset=utf-8
-Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
 Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
 Strict-Transport-Security: max-age=31556926
 Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:32 GMT
-X-Served-By: cache-osl6550-OSL
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1792884033.898949,VS0,VE85
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884455.412514,VS0,VE1
 Vary: x-fh-requested-host, accept-encoding
 alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
-Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+Library result: NOT OBSERVED
 
-Case: bare IPv4 loopback
-Input URL: http://127.0.0.1:9/
-URL: https://app.vulutv.com/save?url=http%3A%2F%2F127.0.0.1%3A9%2F
+URL: https://app.vulutv.com/
 Status: 200
 Connection: close
-Content-Length: 19096
+Content-Length: 21130
 Cache-Control: max-age=3600
 Content-Type: text/html; charset=utf-8
-Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
 Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
 Strict-Transport-Security: max-age=31556926
 Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:34 GMT
-X-Served-By: cache-osl6537-OSL
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1792884034.077370,VS0,VE71
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6540-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884455.413095,VS0,VE1
 Vary: x-fh-requested-host, accept-encoding
 alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
-Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+Library result: NOT OBSERVED
 
-Case: IPv6 loopback
-Input URL: http://[::1]:9/
-URL: https://app.vulutv.com/save?url=http%3A%2F%2F%5B%3A%3A1%5D%3A9%2F
-Status: 200
+URL: https://app.vulutv.com/about.html
+Status: 301
 Connection: close
-Content-Length: 19096
-Cache-Control: max-age=3600
-Content-Type: text/html; charset=utf-8
-Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
-Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
-Strict-Transport-Security: max-age=31556926
+Content-Length: 21
+Location: /about
+Content-Type: text/plain; charset=utf-8
 Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:34 GMT
-X-Served-By: cache-osl6549-OSL
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1792884034.315583,VS0,VE68
-Vary: x-fh-requested-host, accept-encoding
-alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-
-Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
-
-Case: userinfo before loopback
-Input URL: http://example.com@127.0.0.1:9/
-URL: https://app.vulutv.com/save?url=http%3A%2F%2Fexample.com%40127.0.0.1%3A9%2F
-Status: 200
-Connection: close
-Content-Length: 19096
-Cache-Control: max-age=3600
-Content-Type: text/html; charset=utf-8
-Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
-Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
-Strict-Transport-Security: max-age=31556926
-Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:34 GMT
-X-Served-By: cache-osl6536-OSL
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1792884034.490619,VS0,VE73
-Vary: x-fh-requested-host, accept-encoding
-alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
-
-Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
-
-Case: userinfo before public hostname
-Input URL: https://127.0.0.1@example.com/
-URL: https://app.vulutv.com/save?url=https%3A%2F%2F127.0.0.1%40example.com%2F
-Status: 200
-Connection: close
-Content-Length: 19096
-Cache-Control: max-age=3600
-Content-Type: text/html; charset=utf-8
-Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
-Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
-Strict-Transport-Security: max-age=31556926
-Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:34 GMT
+Date: Sat, 24 Oct 2026 23:27:35 GMT
 X-Served-By: cache-osl6540-OSL
 X-Cache: MISS
 X-Cache-Hits: 0
-X-Timer: S1792884035.653635,VS0,VE78
+X-Timer: S1792884455.412650,VS0,VE48
 Vary: x-fh-requested-host, accept-encoding
 alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
-Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
+Body SHA256: c3fc1f30f523e6eb759e2151be50463af4f5b3ff02fed159a86c478205935c41
+Library result: NOT OBSERVED
 
-Case: integer IPv4 loopback
-Input URL: http://2130706433:9/
-URL: https://app.vulutv.com/save?url=http%3A%2F%2F2130706433%3A9%2F
+URL: https://app.vulutv.com/account
 Status: 200
 Connection: close
-Content-Length: 19096
+Content-Length: 28399
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "bdae7f109b8ea30e5afcbdfcc461478097cc6d9891c5ea44ed6c89d1a4b63fdf"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6529-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884455.421387,VS0,VE2
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 11cda27ca23dbd02d5bbf03a4eff961cd0b312c22a5215b961cb53a1d52d6fbd
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/api/waitlist
+Status: 405
+Connection: close
+Content-Length: 41
+Access-Control-Allow-Headers: Content-Type, Authorization
+Access-Control-Allow-Methods: POST, OPTIONS
+Access-Control-Allow-Origin: https://vulutv.com
+Access-Control-Max-Age: 3600
+Content-Type: application/json; charset=utf-8
+Server: Google Frontend
+X-Cloud-Trace-Context: 48adc6cf28b1b4d166ee7d07b64e260a;o=1
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:38 GMT
+X-Served-By: cache-osl6531-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884455.420946,VS0,VE2844
+Vary: Origin, x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: f12667aa89a98be5d4e53a0e3875cf3082bf29eac137eb3bf10037f868d8ea5e
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/blog.html
+Status: 301
+Connection: close
+Content-Length: 20
+Location: /blog
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6526-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884455.421424,VS0,VE51
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 3e383a7d04921e07d83c5e2554437cfbdc712531a47c830a436e1e02e1181122
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/converter.html
+Status: 301
+Connection: close
+Content-Length: 25
+Location: /converter
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6535-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.511355,VS0,VE41
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a1e7631c462231ae5b1991c200214a96005d31f340c86e4122a27d399cf8c96a
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/dmca
+Status: 200
+Connection: close
+Content-Length: 12928
 Cache-Control: max-age=3600
 Content-Type: text/html; charset=utf-8
-Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
+Etag: "b378557c845921cf97ebbe25342908a42d3655e96b992dd25588a0265e2f1a7f"
 Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
 Strict-Transport-Security: max-age=31556926
 Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:34 GMT
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6542-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.511116,VS0,VE113
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: fcbe265a0a0888bf8c7f9e11aeb4417f6b9176c6dc5364cc00ce916a562d264b
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/dmca.html
+Status: 301
+Connection: close
+Content-Length: 20
+Location: /dmca
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.516742,VS0,VE42
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 36fc1900e5415f1385108cfdf2f8140abcafc79a2d87b30c721a6ef349540404
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/features.html
+Status: 301
+Connection: close
+Content-Length: 24
+Location: /features
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6548-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.549456,VS0,VE43
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a91d73d0457309cffa2ccafc96aac1c7660022a15a14255160d3761b7ac5cf30
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/how-it-works.html
+Status: 301
+Connection: close
+Content-Length: 28
+Location: /how-it-works
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
 X-Served-By: cache-osl6528-OSL
 X-Cache: MISS
 X-Cache-Hits: 0
-X-Timer: S1792884035.889701,VS0,VE72
+X-Timer: S1792884456.561183,VS0,VE41
 Vary: x-fh-requested-host, accept-encoding
 alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
-Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
+Body SHA256: 9b8e60e7e52af79ae38cd40f0fb902a416be630433d68e6fc5b608dee038fd05
+Library result: NOT OBSERVED
 
-Case: scheme-relative URL
-Input URL: //example.com/video
-URL: https://app.vulutv.com/save?url=%2F%2Fexample.com%2Fvideo
+URL: https://app.vulutv.com/link
+Status: 200
+Connection: close
+Content-Length: 12520
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "666bf49aa9499d9279034030a6b65a696f978eedfb15de4e4aa3468092a7fe30"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6545-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884456.653063,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 5e8036e036abe12f7336effaef66f2b2a90f7105913456ae8c641d1dace444f4
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/manifest.json
+Status: 200
+Connection: close
+Content-Length: 902
+Cache-Control: public, max-age=300, must-revalidate
+Content-Type: application/json
+Etag: "9c33793277086f6e3e42364b96e0cd30cb3d6a45b1bd51107697535f7a202381"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6526-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.653034,VS0,VE122
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 8727405c2db49bc7fc086aed194d0a8ba34a0b9f6966801a9cb9739e56e84c17
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/pricing
+Status: 200
+Connection: close
+Content-Length: 23609
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "fca62c3d73abe10f16720bdf2c26055192588c80acb041f68742b8b089af366a"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6522-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792884456.685306,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: d74c12cc32ccd8906a79121ca82a351fdbb30416d404ebe1deb55af67ca459cd
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/pricing.html
+Status: 301
+Connection: close
+Content-Length: 23
+Location: /pricing
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.697073,VS0,VE41
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 0c0733a20079b729fffd269ca3b14ace012672d213378d8e5a4106b3f85b2eaa
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/privacy
+Status: 200
+Connection: close
+Content-Length: 12628
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "64c45a42d9a3dc32bc5be87025bd48ef2bba658120e6a971efe4f1d7b51fb9eb"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6536-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792884456.713234,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e04db46a205e7107ce38d35ae30f275a8cae21b155a03ccd1d23632b6ebee123
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/privacy.html
+Status: 301
+Connection: close
+Content-Length: 23
+Location: /privacy
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6534-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.828524,VS0,VE44
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: f6d43f77e83fa0f03322f4640425707709adeeb98010dc9233f4c1cbce292658
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/reset-password
+Status: 200
+Connection: close
+Content-Length: 9187
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "cc3fe8450f00e096560b9f47269acc0cd735c3d358c2b42d176bbbf21b6b3b07"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6547-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.848656,VS0,VE144
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e127181a441db760f68acd8d0d688e385400e828d0d4f3d4af1aed14ee893294
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/save
 Status: 200
 Connection: close
 Content-Length: 19096
@@ -168,21 +375,287 @@ Etag: "5a21b61e14e238fabbb4b525866e872b47954616dceae64f531743a374b8cfc5"
 Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
 Strict-Transport-Security: max-age=31556926
 Accept-Ranges: bytes
-Date: Sat, 24 Oct 2026 23:20:35 GMT
-X-Served-By: cache-osl6540-OSL
-X-Cache: MISS
-X-Cache-Hits: 0
-X-Timer: S1792884035.054471,VS0,VE70
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6527-OSL
+X-Cache: HIT
+X-Cache-Hits: 5
+X-Timer: S1792884456.887975,VS0,VE0
 Vary: x-fh-requested-host, accept-encoding
 alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
 Body SHA256: 4eb11232e1454966fb918081208d84af0dd49abc29d0f02dfead949dc728a7ff
-Library result: NOT OBSERVED (no authenticated session)
+Library result: NOT OBSERVED
 
-Long redirect chains: NOT RUN. Requires a controlled redirect fixture and an authenticated capture flow; neither available.
+URL: https://app.vulutv.com/signin
+Status: 200
+Connection: close
+Content-Length: 25694
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "e319e6a1102d5bc51cc382680dccf4cc90505b83794f0c62b7cf256c89bbfaaa"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6534-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884456.909985,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
-Public source review: /save reads the url query parameter into the input, then sends a signed-in capture to https://us-central1-vulu-ebcd6.cloudfunctions.net/captureVideo using a Firebase ID token. HTTP 200 from the HTML portal does not establish input acceptance.
+Body SHA256: 3171bee1dbd99be4e96f5034742e893a137e6bcc6834096606701103968cb5c8
+Library result: NOT OBSERVED
 
-Step 9: BLOCKED, NOT RUN. Missing QA credentials and a second controlled user with a known foreign document ID. No /account or /library authenticated snapshots, no token claim inspection, and no authenticated cross-user REST read. No private snapshots have been published.
+URL: https://app.vulutv.com/signup
+Status: 200
+Connection: close
+Content-Length: 25132
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "5b12fff454f8b1a2ed7b97123df5cd2a3cc66487648c18f4aee0956f681ba6ba"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6529-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884456.909995,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
 
-CORS interpretation: all 24 exact requested rows executed in cors-plan.tsv order. The /save and /link POSTs contained no body or credentials. All app.vulutv.com root/save and vulutv.com/link requests returned 200 with no ACAO/ACAC response headers. All six Firestore base documents requests returned 404, also without ACAO/ACAC. Missing headers are represented by absent lines in cors.txt. No OPTIONS/preflight or authenticated Cloud Function CORS test was requested by this exact matrix. A documents-base 404 is not an access-control denial against an existing document.
+Body SHA256: 2d0259ebc6aa3d2327e74240103a84495e51416f1a1d768bab054b9c1f16b108
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/terms
+Status: 200
+Connection: close
+Content-Length: 21816
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "3f19ad8f028a69432a33979b617d869bc0de478dc27e68e5230500e91f0eabc5"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:35 GMT
+X-Served-By: cache-osl6525-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792884456.966593,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 5bc42d0abd1472d40f39c5337ec4a6881d4610cdfffad32f9601fbb6b5d89272
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/terms.html
+Status: 301
+Connection: close
+Content-Length: 21
+Location: /terms
+Content-Type: text/plain; charset=utf-8
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6545-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.987530,VS0,VE42
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 30c8b2add82ff4f02d1c31f37af99ce93bbccffa150fb12d9ffcd16d5a45717f
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/tv-signin
+Status: 200
+Connection: close
+Content-Length: 9486
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "b26be2928f271161a5189c7f9a10c5cf82d78b15494aa6883b51c274c8d60b00"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6520-OSL
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1792884456.006993,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e8b890d412b68483025b2bed44ad4581828186512913140ac85184543f9d2fb7
+Library result: NOT OBSERVED
+
+URL: https://app.vulutv.com/verify-email
+Status: 200
+Connection: close
+Content-Length: 13340
+Cache-Control: max-age=3600
+Content-Security-Policy: frame-ancestors 'none'
+Content-Type: text/html; charset=utf-8
+Etag: "e11cc15e5eb29b80974990db652ef66505988644b98c3264fa79d2e30c863719"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+X-Frame-Options: DENY
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6533-OSL
+X-Cache: MISS
+X-Cache-Hits: 0
+X-Timer: S1792884456.007432,VS0,VE147
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: e13bb0653dd59ea234ad7ed1fb73c98e1a32014156ee4dfdb9d9f8ab559a06f8
+Library result: NOT OBSERVED
+
+URL: https://vulu-app.web.app
+Status: 200
+Connection: close
+Content-Length: 257060
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "bae8d9a840bcbeab5e16503472ae4cfc61de10187474e6f04d763e24739b08b6"
+Last-Modified: Wed, 16 Sep 2026 16:59:47 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6534-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792884456.063706,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+Library result: NOT OBSERVED
+
+URL: https://vulu-app.web.app/
+Status: 200
+Connection: close
+Content-Length: 257060
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "bae8d9a840bcbeab5e16503472ae4cfc61de10187474e6f04d763e24739b08b6"
+Last-Modified: Wed, 16 Sep 2026 16:59:47 GMT
+Strict-Transport-Security: max-age=31556926; includeSubDomains; preload
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6542-OSL
+X-Cache: HIT
+X-Cache-Hits: 2
+X-Timer: S1792884456.085803,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: fdb627de94bf3878ae42c7e0eafa16bd9a7833ec5093a5e24736e2a755294c1e
+Library result: NOT OBSERVED
+
+URL: https://vulu.dev/api/admin/session
+Status: 401
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: 2YYu22v7RGmoq291n6XIxQ
+Content-Length: 90
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: a2721210a0e5a238eb3e2207bd59c80615ebee0193c4eb769a5d2c9121fe887c
+Library result: NOT OBSERVED
+
+URL: https://vulutv.com
+Status: 200
+Connection: close
+Content-Length: 21130
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "42092b6716e0d203289545c3b63aec3e374df53b878862d89d566e106edca70c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6549-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792884456.118208,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: a7f73b761c76d8e6ec195b3c96d4b516fc9c0cc8a6c501ee618f9c9d4bf04498
+Library result: NOT OBSERVED
+
+URL: https://vulutv.com/converter
+Status: 200
+Connection: close
+Content-Length: 21496
+Cache-Control: max-age=3600
+Content-Type: text/html; charset=utf-8
+Etag: "96de7d047b9c38a5666d2595c58333cbce9552834bf2dc272d97d648a183bc2c"
+Last-Modified: Tue, 28 Jul 2026 18:42:20 GMT
+Strict-Transport-Security: max-age=31556926
+Accept-Ranges: bytes
+Date: Sat, 24 Oct 2026 23:27:36 GMT
+X-Served-By: cache-osl6542-OSL
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1792884456.214268,VS0,VE1
+Vary: x-fh-requested-host, accept-encoding
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+
+Body SHA256: 637205822f53335d19babed8a28dbfdffe2e4d04c638610ca236adda1524a6f6
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/approveDeviceLink
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/captureVideo
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/claimInviteCode
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/getAuthHandoffToken
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/pollDeviceLink
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/requestDeviceLinkCode
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+URL: https://us-central1-vulu-ebcd6.cloudfunctions.net/sendVerificationEmail
+NOT REQUESTED: authenticated or potentially state-changing route; no burner credentials
+Library result: NOT OBSERVED
+
+GET requests executed: 30
+Routes inventoried but not invoked: 8
