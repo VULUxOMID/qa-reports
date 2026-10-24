@@ -1,0 +1,80 @@
+ADMIN AND VULU.DEV SMOKE
+UTC: 2026-10-24T23:20:32.812625+00:00
+
+Step 10: SKIPPED: no staff account
+.env.qa is absent, so STAFF_EMAIL/STAFF_PASSWORD unavailable. No staff sign-in attempted.
+Read-only unauthenticated HTTP observations below do not constitute a logged-in smoke test or browser rendering proof.
+
+URL: https://vulu.dev/
+Status: 302
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:20:38 GMT
+location: /admin/
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: 1s-TzBGuT5GC7k1RLPU1MQ
+Transfer-Encoding: chunked
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+URL: https://vulu.dev/admin/
+Status: 200
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+content-security-policy-report-only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' https://js.sentry-cdn.com https://cdn.jsdelivr.net https://*.clerk.accounts.dev https://clerk.vulu.ai; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https://*.r2.dev https://*.r2.cloudflarestorage.com https://*.vulu.ai; connect-src 'self' https://*.vulu.ai https://*.up.railway.app https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://*.clerk.accounts.dev https://clerk.vulu.ai; frame-src 'self' https://*.clerk.accounts.dev https://clerk.vulu.ai
+Content-Type: text/html; charset=utf-8
+cross-origin-opener-policy: same-origin-allow-popups
+Date: Sat, 24 Oct 2026 23:20:38 GMT
+etag: "sha256-8r3VdveVQEtXEi3bqAltOeYB24FQSO3hqeP6wUDuNdE"
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: pAPw5gRkRye5C5o3pHNmDw
+Content-Length: 10218
+x-hikari-trace: osl1.sq22
+x-railway-edge: osl1
+vary: accept-encoding
+Connection: close
+
+Body SHA256: f2bdd576f795404b57122ddba8096d39e601db815048ede1a9e3fac140ee35d1
+
+URL: https://vulu.dev/api/admin/session
+Status: 401
+access-control-allow-headers: authorization, content-type, x-requested-with, x-vulu-user-id, x-vulu-platform, x-vulu-build, x-vulu-version, x-vulu-daily-audit-token, x-vulu-admin-environment, x-vulu-admin-csrf
+access-control-allow-methods: GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS
+access-control-allow-origin: *
+Cache-Control: no-store
+Content-Type: application/json; charset=utf-8
+cross-origin-opener-policy: same-origin
+Date: Sat, 24 Oct 2026 23:20:39 GMT
+permissions-policy: autoplay=(self), camera=(self), display-capture=(self), fullscreen=(self), geolocation=(), microphone=(self), payment=(), usb=()
+referrer-policy: no-referrer
+Server: railway-hikari
+strict-transport-security: max-age=15552000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-railway-request-id: SW6sCi7yQkOkBwjalt7tkg
+Content-Length: 90
+x-hikari-trace: osl1.bgvm
+x-railway-edge: osl1
+Connection: close
+
+Body SHA256: a2721210a0e5a238eb3e2207bd59c80615ebee0193c4eb769a5d2c9121fe887c
+
+Only HTTP smoke evidence collected. Browserbase is required by repo policy for beta browser QA and no Browserbase tool is available in this session. No local browser fallback was used.
